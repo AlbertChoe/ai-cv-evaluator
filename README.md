@@ -1,4 +1,4 @@
-# AI CV & Project Evaluator — FastAPI + SQLite + Qdrant (Structured)
+# AI CV & Project Evaluator — FastAPI + SQLite + Qdrant
 
 - FastAPI API (layered)
 - SQLite via SQLAlchemy for metadata/jobs
@@ -13,7 +13,7 @@ source .venv/bin/activate   # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 cp .env.example .env
 docker compose up -d qdrant
-uvicorn app.main:app --reload
+uvicorn app.main:app --reload --host 127.0.0.1 --port 8008
 # http://127.0.0.1:8000/docs
 ```
 

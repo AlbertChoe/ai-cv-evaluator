@@ -1,9 +1,8 @@
-# tes_run.py
 import os
 import httpx
 from dotenv import load_dotenv
 
-load_dotenv(dotenv_path=".env")  # <- make sure .env is at your project root
+load_dotenv(dotenv_path=".env")  # <- make sure .env is at root
 
 url = "https://api.openai.com/v1/embeddings"
 headers = {"Authorization": f"Bearer {os.getenv('OPENAI_API_KEY')}"}

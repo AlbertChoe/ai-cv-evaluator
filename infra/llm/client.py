@@ -32,8 +32,10 @@ async def _openrouter_chat(messages, model: str):
 
 
 async def _choose_and_call(messages):
-    if settings.OPENROUTER_API_KEY:
-        return await _openrouter_chat(messages, settings.OPENROUTER_MODEL)
+    if settings.OPENAI_API_KEY:
+        return await _openai_chat(messages, settings.OPENAI_MODEL)
+    # if settings.OPENROUTER_API_KEY:
+    #     return await _openrouter_chat(messages, settings.OPENROUTER_MODEL)
     return json.dumps({"stub": True})
 
 
@@ -50,7 +52,7 @@ async def evaluate_cv_llm(cv_text: str, refs: List[str]) -> Dict:
     messages = [{"role": "system", "content": "You are a strict evaluator returning only valid JSON."},
                 {"role": "user", "content": content}]
     resp = await _choose_and_call(messages)
-    return _parse_json_or_stub(resp, {"cv_match_rate": 0.6, "cv_feedback": "Stub feedback."})
+    return _parse_json_or_stub(resp, {"cv_match_rate": 0.5, "cv_feedback": "Stub feedback."})
 
 
 async def evaluate_project_llm(report_text: str, refs: List[str]) -> Dict:
@@ -59,7 +61,7 @@ async def evaluate_project_llm(report_text: str, refs: List[str]) -> Dict:
     messages = [{"role": "system", "content": "You are a strict evaluator returning only valid JSON."},
                 {"role": "user", "content": content}]
     resp = await _choose_and_call(messages)
-    return _parse_json_or_stub(resp, {"project_score": 4.2, "project_feedback": "Stub feedback."})
+    return _parse_json_or_stub(resp, {"project_score": 2.5, "project_feedback": "Stub feedback."})
 
 
 async def summarize_overall_llm(cv_eval: Dict, project_eval: Dict) -> Dict:
