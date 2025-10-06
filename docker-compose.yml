@@ -10,3 +10,4 @@ services:
 
 volumes:
   qdrant_data:
+    name: qdrant_data

@@ -1,23 +1,21 @@
 import asyncio
 import os
 import pdfplumber
-from infra.rag.qdrant_client import ensure_collection, COLLECTION_PROJECT, upsert_texts
+from infra.rag.qdrant_client import ensure_collection, COLLECTION_PROJECT, upsert_texts_with_ids
 from infra.rag.embeddings import embed_texts_openai
+
+JOB_KEY = "backend_pe_v1"
+PDF_PATH = "data/case_study_brief_backend.pdf"
 
 
 def chunk_text(text: str, size=1000, overlap=150):
-    chunks = []
-    i = 0
+    chunks, i = [], 0
     while i < len(text):
-        piece = text[i:i+size]
-        piece = piece.strip()
+        piece = text[i:i+size].strip()
         if piece:
             chunks.append(piece)
         i += max(1, size - overlap)
     return chunks
-
-
-PDF_PATH = "data/case_study_brief_backend.pdf"
 
 
 def parse_pdf_text(path: str) -> str:
@@ -36,10 +34,13 @@ async def main():
     payloads = [{
         "text": t,
         "doc_type": "case_brief",
-        "source": os.path.basename(PDF_PATH)
-    } for t in chunks]
-    upsert_texts(COLLECTION_PROJECT, vecs, payloads)
-    print(f"Ingested {len(chunks)} case-brief chunks from {PDF_PATH}.")
+        "job_key": JOB_KEY,
+        "source": os.path.basename(PDF_PATH),
+        "chunk_index": i
+    } for i, t in enumerate(chunks)]
+    upsert_texts_with_ids(COLLECTION_PROJECT, vecs, payloads)
+    print(
+        f"Ingested {len(chunks)} case-brief chunks for job_key={JOB_KEY} from {PDF_PATH}")
 
 if __name__ == "__main__":
     asyncio.run(main())
