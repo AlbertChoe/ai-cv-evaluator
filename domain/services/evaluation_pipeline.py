@@ -1,13 +1,21 @@
 import re
 import json
 import logging
-from typing import Dict, List
+from typing import Dict, List, Optional
+
 from infra.pdf.parser import parse_pdf_text
+from infra.rag.qdrant_client import debug_count, debug_list_collections, debug_scroll_one
 from infra.rag.retriever import (
     retrieve_for_cv,
     retrieve_for_project,
+    resolve_job_key,
+    retrieve_rubrics,
 )
-from infra.llm.client import evaluate_cv_llm, evaluate_project_llm, summarize_overall_llm
+from infra.llm.client import (
+    evaluate_cv_llm,
+    evaluate_project_llm,
+    summarize_overall_llm,
+)
 
 logger = logging.getLogger("evaluation_pipeline")
 logger.setLevel(logging.INFO)
@@ -19,13 +27,6 @@ if not logger.handlers:
     logger.addHandler(fh)
 
 
-def job_key_from_title(job_title: str) -> str:
-    t = job_title.strip().lower()
-    if "product engineer" in t and "backend" in t:
-        return "backend_pe_v1"
-    return t.replace(" ", "_")  # fallback
-
-
 def redact_numeric_examples(text: str) -> str:
     # remove json-like examples with numeric scores to prevent bias
     text = re.sub(r'\{[^{}]{0,200}("project_score"|\'project_score\')[^{}]+\}',
@@ -35,7 +36,7 @@ def redact_numeric_examples(text: str) -> str:
     return text
 
 
-def sanitize_refs(refs: list[str]) -> list[str]:
+def sanitize_refs(refs: List[str]) -> List[str]:
     return [redact_numeric_examples(r) for r in refs]
 
 
@@ -45,53 +46,93 @@ async def run_evaluation(job_title: str, cv_path: str, report_path: str) -> Dict
     logger.info(f"CV path: {cv_path}")
     logger.info(f"Report path: {report_path}")
 
-    job_key = job_key_from_title(job_title)
-    logger.info(f"Resolved job_key: {job_key}")
+    logger.info(f"Qdrant collections: {debug_list_collections()}")
+    logger.info(f"job_catalog count (any): {debug_count('job_catalog')}")
+    logger.info(
+        f"job_catalog count (doc_type=job_catalog): {debug_count('job_catalog', 'job_catalog')}")
+    logger.info(
+        f"job_catalog sample payloads: {debug_scroll_one('job_catalog', 'job_catalog')}")
 
-    # Parse PDFs
+    job_key, confidence, candidates = await resolve_job_key(job_title)
+    job_tags: Optional[List[str]] = None
+
+    if not job_key:
+        # last-resort fallback (kept, but you should prefer catalog resolution)
+        job_key = job_title.strip().lower().replace(" ", "-")
+        logger.warning(
+            f"Could not confidently resolve job_key (best similarity={confidence:.3f}). "
+            f"Falling back to '{job_key}'. Candidates={candidates}"
+        )
+    else:
+        top = max(candidates, key=lambda x: x["similarity"])
+        job_tags = top.get("tags", [])
+        logger.info(
+            f"Resolved job_key: {job_key} "
+            f"(similarity={confidence:.3f}, tags={job_tags})"
+        )
+
     cv_text = parse_pdf_text(cv_path)
     report_text = parse_pdf_text(report_path)
     logger.info(f"CV text length: {len(cv_text)} chars")
     logger.info(f"Report text length: {len(report_text)} chars")
 
-    # Reference texts from Qdrant
+    logger.info("Retrieving shared rubric (once)")
+    rubric_blocks = await retrieve_rubrics(job_key=job_key, k=5, radius=1)
+    logger.info(f"Retrieved {len(rubric_blocks)} rubric blocks (shared)")
+
     logger.info("Retrieving job description references for CV")
-    cv_refs: List[str] = await retrieve_for_cv(job_key=job_key, job_title=job_title, k=5)
+    cv_refs: List[str] = await retrieve_for_cv(
+        job_key=job_key,
+        job_title=job_title,
+        job_tags=job_tags,
+        k=5,
+        radius=1,
+        rubric_blocks=rubric_blocks,
+    )
+    cv_refs = sanitize_refs(cv_refs)
     logger.info(f"Retrieved {len(cv_refs)} CV references")
     for i, ref in enumerate(cv_refs[:3]):
         logger.info(f"CV ref {i+1}: {ref}")
 
     logger.info("Retrieving case brief + rubric references for project")
-    proj_refs: List[str] = await retrieve_for_project(job_key=job_key, k=5)
+    proj_refs: List[str] = await retrieve_for_project(
+        job_key=job_key,
+        job_title=job_title,
+        job_tags=job_tags,
+        k=5,
+        radius=1,
+        rubric_blocks=rubric_blocks,
+    )
+    proj_refs = sanitize_refs(proj_refs)
     logger.info(f"Retrieved {len(proj_refs)} project references")
     for i, ref in enumerate(proj_refs[:3]):
         logger.info(f"Project ref {i+1}: {ref}")
 
-    cv_refs = sanitize_refs(cv_refs)
-    proj_refs = sanitize_refs(proj_refs)
-
-    # Evaluate CV
+    #  Evaluate with LLMs
     logger.info("Calling LLM for CV evaluation")
     cv_eval = await evaluate_cv_llm(cv_text=cv_text, refs=cv_refs)
     logger.info(f"CV evaluation result:\n{json.dumps(cv_eval, indent=2)}")
 
-    # Evaluate Project Report
     logger.info("Calling LLM for Project evaluation")
     project_eval = await evaluate_project_llm(report_text=report_text, refs=proj_refs)
     logger.info(
         f"Project evaluation result:\n{json.dumps(project_eval, indent=2)}")
 
-    # Summarize
+    #  Summarize
     logger.info("Calling LLM for overall summary synthesis")
     summary = await summarize_overall_llm(cv_eval=cv_eval, project_eval=project_eval)
     logger.info(f"Final summary:\n{json.dumps(summary, indent=2)}")
 
     result = {
-        "cv_match_rate": cv_eval.get("cv_match_rate", 0.0),
-        "cv_feedback":  cv_eval.get("cv_feedback", ""),
-        "project_score": project_eval.get("project_score", 0.0),
-        "project_feedback": project_eval.get("project_feedback", ""),
-        "overall_summary": summary.get("overall_summary", ""),
+        "cv_match_rate": float(cv_eval.get("cv_match_rate", 0.0) or 0.0),
+        "cv_feedback": str(cv_eval.get("cv_feedback", "") or ""),
+        "project_score": float(project_eval.get("project_score", 0.0) or 0.0),
+        "project_feedback": str(project_eval.get("project_feedback", "") or ""),
+        "overall_summary": str(summary.get("overall_summary", "") or ""),
+        # helpful for debugging:
+        "job_key": job_key,
+        "resolver_confidence": float(confidence),
+        "resolver_tags": job_tags or [],
     }
 
     logger.info(f"Final combined result:\n{json.dumps(result, indent=2)}")
