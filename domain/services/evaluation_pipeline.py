@@ -46,18 +46,10 @@ async def run_evaluation(job_title: str, cv_path: str, report_path: str) -> Dict
     logger.info(f"CV path: {cv_path}")
     logger.info(f"Report path: {report_path}")
 
-    logger.info(f"Qdrant collections: {debug_list_collections()}")
-    logger.info(f"job_catalog count (any): {debug_count('job_catalog')}")
-    logger.info(
-        f"job_catalog count (doc_type=job_catalog): {debug_count('job_catalog', 'job_catalog')}")
-    logger.info(
-        f"job_catalog sample payloads: {debug_scroll_one('job_catalog', 'job_catalog')}")
-
     job_key, confidence, candidates = await resolve_job_key(job_title)
     job_tags: Optional[List[str]] = None
 
     if not job_key:
-        # last-resort fallback (kept, but you should prefer catalog resolution)
         job_key = job_title.strip().lower().replace(" ", "-")
         logger.warning(
             f"Could not confidently resolve job_key (best similarity={confidence:.3f}). "
@@ -76,9 +68,9 @@ async def run_evaluation(job_title: str, cv_path: str, report_path: str) -> Dict
     logger.info(f"CV text length: {len(cv_text)} chars")
     logger.info(f"Report text length: {len(report_text)} chars")
 
-    logger.info("Retrieving shared rubric (once)")
+    logger.info("Retrieving shared rubric content")
     rubric_blocks = await retrieve_rubrics(job_key=job_key, k=5, radius=1)
-    logger.info(f"Retrieved {len(rubric_blocks)} rubric blocks (shared)")
+    logger.info(f"Retrieved {len(rubric_blocks)} rubric blocks")
 
     logger.info("Retrieving job description references for CV")
     cv_refs: List[str] = await retrieve_for_cv(
@@ -92,7 +84,7 @@ async def run_evaluation(job_title: str, cv_path: str, report_path: str) -> Dict
     cv_refs = sanitize_refs(cv_refs)
     logger.info(f"Retrieved {len(cv_refs)} CV references")
     for i, ref in enumerate(cv_refs[:3]):
-        logger.info(f"CV ref {i+1}: {ref}")
+        logger.info(f"CV ref {i+1}: {ref[:200] }...")
 
     logger.info("Retrieving case brief + rubric references for project")
     proj_refs: List[str] = await retrieve_for_project(
@@ -106,22 +98,30 @@ async def run_evaluation(job_title: str, cv_path: str, report_path: str) -> Dict
     proj_refs = sanitize_refs(proj_refs)
     logger.info(f"Retrieved {len(proj_refs)} project references")
     for i, ref in enumerate(proj_refs[:3]):
-        logger.info(f"Project ref {i+1}: {ref}")
+        logger.info(f"Project ref {i+1}: {ref[:200] }...")
 
     #  Evaluate with LLMs
     logger.info("Calling LLM for CV evaluation")
     cv_eval = await evaluate_cv_llm(cv_text=cv_text, refs=cv_refs)
-    logger.info(f"CV evaluation result:\n{json.dumps(cv_eval, indent=2)}")
+    logger.info(
+        "CV evaluation result: "
+        f"match_rate={cv_eval.get('cv_match_rate')} feedback_preview={str(cv_eval.get('cv_feedback'))}"
+    )
 
     logger.info("Calling LLM for Project evaluation")
     project_eval = await evaluate_project_llm(report_text=report_text, refs=proj_refs)
     logger.info(
-        f"Project evaluation result:\n{json.dumps(project_eval, indent=2)}")
+        "Project evaluation result: "
+        f"score={project_eval.get('project_score')} feedback_preview={str(project_eval.get('project_feedback'))}"
+    )
 
     #  Summarize
     logger.info("Calling LLM for overall summary synthesis")
     summary = await summarize_overall_llm(cv_eval=cv_eval, project_eval=project_eval)
-    logger.info(f"Final summary:\n{json.dumps(summary, indent=2)}")
+    logger.info(
+        "Overall summary preview: "
+        f"{summary.get('overall_summary', '')}"
+    )
 
     result = {
         "cv_match_rate": float(cv_eval.get("cv_match_rate", 0.0) or 0.0),
@@ -129,10 +129,7 @@ async def run_evaluation(job_title: str, cv_path: str, report_path: str) -> Dict
         "project_score": float(project_eval.get("project_score", 0.0) or 0.0),
         "project_feedback": str(project_eval.get("project_feedback", "") or ""),
         "overall_summary": str(summary.get("overall_summary", "") or ""),
-        # helpful for debugging:
         "job_key": job_key,
-        "resolver_confidence": float(confidence),
-        "resolver_tags": job_tags or [],
     }
 
     logger.info(f"Final combined result:\n{json.dumps(result, indent=2)}")

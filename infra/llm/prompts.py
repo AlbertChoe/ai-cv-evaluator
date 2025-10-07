@@ -47,7 +47,15 @@ Return ONLY strict JSON:
 
 
 FINAL_SUMMARY_PROMPT = """
-Synthesize the CV evaluation and Project evaluation into a 3-5 sentence overall summary.
+You are producing the final candidate evaluation summary. Use ONLY the CV evaluation JSON and Project evaluation JSON supplied in the prompt.
+
+Requirements:
+- Write 3-5 full sentences.
+- Mention the CV match rate exactly as the decimal you receive (0-1 scale).
+- Mention the project score exactly as the 1-5 score you receive.
+- Cover the candidate's key strengths, salient gaps, and conclude with a clear recommendation.
+- Do not invent numbers or criteria beyond what is provided.
+
 Return strict JSON:
 {
   "overall_summary": "<text>"

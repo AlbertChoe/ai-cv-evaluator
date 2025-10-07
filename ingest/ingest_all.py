@@ -16,8 +16,12 @@ VECTOR_SIZE = 1536
 HEADER_CELLS = {"parameter", "description", "scoring guide"}
 
 log = logging.getLogger("ingest_all")
-logging.basicConfig(level=logging.INFO,
-                    format="%(asctime)s [%(levelname)s] %(message)s")
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(message)s",
+)
+for noisy_logger in ("httpx", "httpcore.httpx", "qdrant_client.http"):
+    logging.getLogger(noisy_logger).setLevel(logging.WARNING)
 
 
 def read_pdf_text(path: str, max_pages: int | None = None) -> str:
