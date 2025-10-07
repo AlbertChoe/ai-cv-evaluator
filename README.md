@@ -22,4 +22,8 @@ uvicorn app.main:app --reload --host 127.0.0.1 --port 8008
 python -m ingest.ingest_job_desc
 python -m ingest.ingest_case_brief
 python -m ingest.ingest_rubrics
+
+
+python -m ingest.ingest_all --jd data/job_description_backend.pdf --brief data/case_study_brief_backend.pdf --rubric data/scoring_rubric_backend.pdf
+
 ```
