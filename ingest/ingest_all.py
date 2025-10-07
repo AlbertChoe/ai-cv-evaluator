@@ -45,22 +45,6 @@ def chunk_text(text: str, size=1000, overlap=150) -> List[str]:
     return out
 
 
-# helpers for rubrics pdf table
-def is_header_row(row):
-    cells = [(c or "").strip().lower() for c in row]
-    return set(cells) >= HEADER_CELLS
-
-
-def normalize_row(row):
-    r = [(c or "").strip() for c in row] + ["", "", ""]
-    return r[:3]  # Parameter, Description, Guide
-
-
-def extract_weight(text: str):
-    m = re.search(r"(\d+)\s*%", text or "")
-    return int(m.group(1)) if m else None
-
-
 def make_point_id(job_key: str, term: str, idx: int) -> str:
     name = f"{job_key}::{idx}::{term}"
     return str(uuid.uuid5(uuid.NAMESPACE_URL, name))

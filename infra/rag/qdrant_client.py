@@ -124,36 +124,36 @@ def fetch_neighbors_by_index(
     return out
 
 
-def debug_list_collections():
-    c = get_client()
-    cols = c.get_collections().collections
-    return [col.name for col in cols]
+# def debug_list_collections():
+#     c = get_client()
+#     cols = c.get_collections().collections
+#     return [col.name for col in cols]
 
 
-def debug_count(collection: str, doc_type: Optional[str] = None):
-    c = get_client()
-    q_filter = None
-    if doc_type:
-        q_filter = Filter(
-            must=[FieldCondition(
-                key="doc_type", match=MatchValue(value=doc_type))]
-        )
-    res = c.count(collection_name=collection,
-                  count_filter=q_filter, exact=True)
-    return res.count
+# def debug_count(collection: str, doc_type: Optional[str] = None):
+#     c = get_client()
+#     q_filter = None
+#     if doc_type:
+#         q_filter = Filter(
+#             must=[FieldCondition(
+#                 key="doc_type", match=MatchValue(value=doc_type))]
+#         )
+#     res = c.count(collection_name=collection,
+#                   count_filter=q_filter, exact=True)
+#     return res.count
 
 
-def debug_scroll_one(collection: str, doc_type: Optional[str] = None):
-    c = get_client()
-    q_filter = None
-    if doc_type:
-        q_filter = Filter(
-            must=[FieldCondition(
-                key="doc_type", match=MatchValue(value=doc_type))]
-        )
-    points, _ = c.scroll(collection_name=collection,
-                         scroll_filter=q_filter, limit=3, with_payload=True)
-    return [p.payload for p in points]
+# def debug_scroll_one(collection: str, doc_type: Optional[str] = None):
+#     c = get_client()
+#     q_filter = None
+#     if doc_type:
+#         q_filter = Filter(
+#             must=[FieldCondition(
+#                 key="doc_type", match=MatchValue(value=doc_type))]
+#         )
+#     points, _ = c.scroll(collection_name=collection,
+#                          scroll_filter=q_filter, limit=3, with_payload=True)
+#     return [p.payload for p in points]
 
 
 def upsert_points_batch(collection: str, points: List[Dict]):

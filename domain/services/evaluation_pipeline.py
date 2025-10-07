@@ -4,7 +4,6 @@ import logging
 from typing import Dict, List, Optional
 
 from infra.pdf.parser import parse_pdf_text
-from infra.rag.qdrant_client import debug_count, debug_list_collections, debug_scroll_one
 from infra.rag.retriever import (
     retrieve_for_cv,
     retrieve_for_project,
@@ -71,6 +70,8 @@ async def run_evaluation(job_title: str, cv_path: str, report_path: str) -> Dict
     logger.info("Retrieving shared rubric content")
     rubric_blocks = await retrieve_rubrics(job_key=job_key, k=5, radius=1)
     logger.info(f"Retrieved {len(rubric_blocks)} rubric blocks")
+    for i, ref in enumerate(rubric_blocks[:3]):
+        logger.info(f"Rubrics ref {i+1}: {ref[:200] }...")
 
     logger.info("Retrieving job description references for CV")
     cv_refs: List[str] = await retrieve_for_cv(
