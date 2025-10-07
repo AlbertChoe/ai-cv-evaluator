@@ -19,6 +19,7 @@ uvicorn app.main:app --reload --host 127.0.0.1 --port 8008
 
 ## Ingest
 ```bash
-python ingest/ingest_job_desc.py
-python ingest/ingest_case_brief.py
+python -m ingest.ingest_job_desc
+python -m ingest.ingest_case_brief
+python -m ingest.ingest_rubrics
 ```

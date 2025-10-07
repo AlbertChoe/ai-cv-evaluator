@@ -80,7 +80,6 @@ async def main():
 
     consolidated_markdown = "\n".join(
         [ln for ln in md_lines if ln is not None])
-    consolidated_json = json.dumps({"rows": json_rows}, ensure_ascii=False)
 
     # Full chunk first, then split only if long
     MAX_CHARS = 1800

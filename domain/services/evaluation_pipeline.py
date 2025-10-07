@@ -67,8 +67,8 @@ async def run_evaluation(job_title: str, cv_path: str, report_path: str) -> Dict
     for i, ref in enumerate(proj_refs[:3]):
         logger.info(f"Project ref {i+1}: {ref}")
 
-    cv_refs = await sanitize_refs(cv_refs)
-    proj_refs = await sanitize_refs(proj_refs)
+    cv_refs = sanitize_refs(cv_refs)
+    proj_refs = sanitize_refs(proj_refs)
 
     # Evaluate CV
     logger.info("Calling LLM for CV evaluation")
