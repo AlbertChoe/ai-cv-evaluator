@@ -2,7 +2,7 @@ import json
 import httpx
 from typing import Dict, List
 from app.settings import settings
-from infra.llm.prompts import CV_EVAL_PROMPT, PROJECT_EVAL_PROMPT, FINAL_SUMMARY_PROMPT
+from infra.llm.prompts import CATALOG_PROMPT, CV_EVAL_PROMPT, PROJECT_EVAL_PROMPT, FINAL_SUMMARY_PROMPT
 
 
 async def _openai_chat(messages, model: str):
@@ -70,3 +70,29 @@ async def summarize_overall_llm(cv_eval: Dict, project_eval: Dict) -> Dict:
                 {"role": "user", "content": content}]
     resp = await _choose_and_call(messages)
     return _parse_json_or_stub(resp, {"overall_summary": "Stub overall summary."})
+
+
+async def generate_job_catalog_metadata(raw_text: str, timeout=30) -> dict:
+    payload = {
+        "model": settings.OPENAI_MODEL or "gpt-4o-mini",
+        "temperature": 0.1,
+        "response_format": {"type": "json_object"},
+        "messages": [
+            {"role": "system", "content": "You return strict JSON only."},
+            {"role": "user", "content": CATALOG_PROMPT.format(raw=raw_text)},
+        ],
+    }
+    async with httpx.AsyncClient(
+            headers={"Authorization": f"Bearer {settings.OPENAI_API_KEY}"},
+            timeout=timeout) as client:
+        r = await client.post("https://api.openai.com/v1/chat/completions", json=payload)
+        r.raise_for_status()
+        data = r.json()
+        content = data["choices"][0]["message"]["content"]
+        meta = json.loads(content)
+        for k in ("title", "aliases", "tags", "job_key"):
+            if k not in meta:
+                raise ValueError(f"Missing key in catalog JSON: {k}")
+        if not isinstance(meta["aliases"], list) or not isinstance(meta["tags"], list):
+            raise ValueError("aliases/tags must be arrays")
+        return meta

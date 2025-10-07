@@ -1,4 +1,5 @@
-from typing import Iterable, Optional
+from ast import Dict
+from typing import Iterable, List, Optional
 from qdrant_client import QdrantClient
 from qdrant_client.models import Distance, VectorParams, PointStruct, Filter, FieldCondition, MatchValue, MatchAny, Range
 from app.settings import settings
@@ -6,6 +7,7 @@ import hashlib
 
 COLLECTION_CV = "job_descriptions"
 COLLECTION_PROJECT = "case_and_rubrics"
+COLLECTION_CATALOG = "job_catalog"
 
 
 def get_client():
@@ -19,6 +21,11 @@ def _ensure_payload_indexes(collection: str):
         ("doc_type", "keyword"),
         ("source", "keyword"),
         ("chunk_index", "integer"),
+        #  catalog-specific
+        ("variant", "keyword"),
+        ("alias_index", "integer"),
+        ("title", "keyword"),
+        ("searchable_term", "keyword"),
     ]:
         try:
             c.create_payload_index(
@@ -63,14 +70,18 @@ def search_top_k_filtered(
     collection: str,
     query_vector: list[float],
     k: int,
-    job_key: str,
+    job_key: Optional[str] = None,
     doc_types: Optional[Iterable[str]] = None,
 ):
-    must = [FieldCondition(key="job_key", match=MatchValue(value=job_key))]
+    must: list[FieldCondition] = []
+    if job_key:
+        must.append(FieldCondition(key="job_key",
+                    match=MatchValue(value=job_key)))
     if doc_types:
         must.append(FieldCondition(key="doc_type",
                     match=MatchAny(any=list(doc_types))))
-    q_filter = Filter(must=must)
+
+    q_filter = Filter(must=must) if must else None
 
     hits = get_client().search(
         collection_name=collection,
@@ -111,3 +122,47 @@ def fetch_neighbors_by_index(
             break
     out.sort(key=lambda x: x.get("chunk_index", 0))
     return out
+
+
+def debug_list_collections():
+    c = get_client()
+    cols = c.get_collections().collections
+    return [col.name for col in cols]
+
+
+def debug_count(collection: str, doc_type: Optional[str] = None):
+    c = get_client()
+    q_filter = None
+    if doc_type:
+        q_filter = Filter(
+            must=[FieldCondition(
+                key="doc_type", match=MatchValue(value=doc_type))]
+        )
+    res = c.count(collection_name=collection,
+                  count_filter=q_filter, exact=True)
+    return res.count
+
+
+def debug_scroll_one(collection: str, doc_type: Optional[str] = None):
+    c = get_client()
+    q_filter = None
+    if doc_type:
+        q_filter = Filter(
+            must=[FieldCondition(
+                key="doc_type", match=MatchValue(value=doc_type))]
+        )
+    points, _ = c.scroll(collection_name=collection,
+                         scroll_filter=q_filter, limit=3, with_payload=True)
+    return [p.payload for p in points]
+
+
+def upsert_points_batch(collection: str, points: List[Dict]):
+    from qdrant_client.models import PointStruct
+    if not points:
+        return
+    c = get_client()
+    qdrant_points = [
+        PointStruct(id=pt["id"], vector=pt["vector"], payload=pt["payload"])
+        for pt in points
+    ]
+    c.upsert(collection_name=collection, points=qdrant_points)
