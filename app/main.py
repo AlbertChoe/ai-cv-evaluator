@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from app.settings import settings
 from app.logging import configure_logging
 from app.error_handlers import attach_error_handlers
-from api.v1.router import api_router
+from api.router import api_router
 from infra.db.session import init_db
 
 configure_logging()
@@ -15,4 +15,4 @@ def _on_startup():
 
 
 attach_error_handlers(app)
-app.include_router(api_router, prefix=settings.API_V1_PREFIX)
+app.include_router(api_router)
