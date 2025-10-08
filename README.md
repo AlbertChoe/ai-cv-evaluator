@@ -109,10 +109,11 @@ All environment variables are loaded via `app/settings.py`. Key options:
 Use `ingest/ingest_all.py` to ingest job assets prior to evaluation:
 
 ```bash
-python -m ingest.ingest_all --jd data/Junior_Project_Manager_JobDesc.pdf --brief data/Product_Engineer_Backend_CaseStudy.pdf --rubric data/Product_Engineer_Backend_Rubric.pdf
-python -m ingest.ingest_all --jd data/Frontend_Engineer_JobDesc.pdf --brief data/Product_Engineer_Backend_CaseStudy.pdf --rubric data/Product_Engineer_Backend_Rubric.pdf
-python -m ingest.ingest_all --jd data/Fullstack_Java_Engineer_JobDesc.pdf --brief data/Product_Engineer_Backend_CaseStudy.pdf --rubric data/Product_Engineer_Backend_Rubric.pdf
+python -m ingest.ingest_all --jd data/Junior_Project_Manager_JobDesc.pdf --brief data/Product_Engineer_Backend_CaseStudy.pdf --rubric data/Junior_Project_Manager_Rubric.pdf
+python -m ingest.ingest_all --jd data/Frontend_Engineer_JobDesc.pdf --brief data/Product_Engineer_Backend_CaseStudy.pdf --rubric data/Frontend_Engineer_Rubric.pdf
+python -m ingest.ingest_all --jd data/Fullstack_Java_Engineer_JobDesc.pdf --brief data/Product_Engineer_Backend_CaseStudy.pdf --rubric data/Fullstack_Java_Engineer_Rubric.pdf
 python -m ingest.ingest_all --jd data/Product_Engineer_Backend_JobDesc.pdf --brief data/Product_Engineer_Backend_CaseStudy.pdf --rubric data/Product_Engineer_Backend_Rubric.pdf
+
 ```
 
 Steps executed:

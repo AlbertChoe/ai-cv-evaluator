@@ -130,26 +130,79 @@ async def ingest_case_brief(job_key: str, brief_pdf_path: str):
 
 async def ingest_rubric(job_key: str, rubric_pdf_path: str):
     ensure_collection(COLLECTION_PROJECT, vector_size=VECTOR_SIZE)
-    rows = []
+
+    md = []
     with pdfplumber.open(rubric_pdf_path) as pdf:
         for page in pdf.pages:
-            for tbl in (page.extract_tables() or []):
-                rows += [[(c or "").strip() for c in r] for r in tbl if r]
+            words = page.extract_words()
+            tables = page.extract_tables() or []
 
-    def is_header(cells: List[str]) -> bool:
-        s = set([c.lower() for c in cells])
-        return {"parameter", "description", "scoring guide"} <= s
+            table_bboxes = []
+            for tbl_obj in page.find_tables():
+                table_bboxes.append(tbl_obj.bbox)
 
-    clean = [r[:3] + ["", "", ""] for r in rows if any(r) and not is_header(r)]
-    md = ["# Scoring Rubric (Consolidated)\n"]
-    for r in clean:
-        param = re.sub(r"\(.*?weight.*?\)", "", r[0], flags=re.I).strip()
-        if not param:
-            continue
-        desc, guide = r[1], r[2]
-        md += [f"### {param}", f"**Description:** {desc}" if desc else "",
-               f"**Guide:** {guide}" if guide else "", ""]
-    consolidated = "\n".join([x for x in md if x is not None])
+            lines_with_pos = []
+            current_line = []
+            current_y = None
+
+            for word in sorted(words, key=lambda w: (w['top'], w['x0'])):
+                if current_y is None or abs(word['top'] - current_y) < 3:
+                    current_line.append(word['text'])
+                    current_y = word['top']
+                else:
+                    if current_line:
+                        line_text = ' '.join(current_line).strip()
+                        if line_text:
+                            lines_with_pos.append((current_y, line_text))
+                    current_line = [word['text']]
+                    current_y = word['top']
+
+            if current_line:
+                line_text = ' '.join(current_line).strip()
+                if line_text:
+                    lines_with_pos.append((current_y, line_text))
+
+            content_items = []
+
+            for y_pos, line in lines_with_pos:
+                if any(kw in line for kw in ['Rubric', 'Evaluation', 'scale per parameter']):
+                    content_items.append(('header', y_pos, line))
+
+            for i, (tbl, bbox) in enumerate(zip(tables, table_bboxes)):
+                content_items.append(('table', bbox[1], tbl))
+
+            content_items.sort(key=lambda x: x[1])
+
+            def is_header(cells: List[str]) -> bool:
+                s = set([c.lower() for c in cells])
+                return {"parameter", "description", "scoring guide"} <= s
+
+            for item_type, y_pos, content in content_items:
+                if item_type == 'header':
+                    md.append(f"## {content}\n")
+
+                elif item_type == 'table':
+                    rows = [[cell.strip() if cell else "" for cell in row]
+                            for row in content if row]
+
+                    for r in rows:
+                        if not any(r) or is_header(r):
+                            continue
+
+                        param = re.sub(r"\(.*?weight.*?\)", "",
+                                       r[0], flags=re.I).strip()
+                        if not param:
+                            continue
+
+                        desc = r[1] if len(r) > 1 else ""
+                        guide = r[2] if len(r) > 2 else ""
+
+                        md += [f"### {param}",
+                               f"**Description:** {desc}" if desc else "",
+                               f"**Guide:** {guide}" if guide else "",
+                               ""]
+
+    consolidated = "\n".join([x for x in md if x])
 
     blocks = chunk_text(consolidated, size=1800, overlap=200)
     vecs = await embed_texts_with_openai_safe(blocks)

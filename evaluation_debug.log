@@ -1,1162 +1,380 @@
-2025-10-07 23:10:53,406 [INFO] === Starting evaluation job ===
-2025-10-07 23:10:53,407 [INFO] Job title: Backend Engineer
-2025-10-07 23:10:53,407 [INFO] CV path: storage\CV_Albert_ITB.pdf
-2025-10-07 23:10:53,407 [INFO] Report path: storage\Study_CaseSubmissionTemplate.pdf
-2025-10-07 23:10:53,430 [INFO] Qdrant collections: ['job_catalog', 'job_descriptions', 'case_and_rubrics']
-2025-10-07 23:10:53,450 [INFO] job_catalog count (any): 9
-2025-10-07 23:10:53,469 [INFO] job_catalog count (doc_type=job_catalog): 9
-2025-10-07 23:10:53,489 [INFO] job_catalog sample payloads: [{'text': 'Backend Engineer', 'doc_type': 'job_catalog', 'job_key': 'product-engineer-backend-v1', 'title': 'Product Engineer (Backend)', 'searchable_term': 'Backend Engineer', 'is_primary': False, 'aliases': ['Backend Engineer', 'Backend Developer', 'Senior Backend Engineer', 'Junior Backend Engineer', 'AI Backend Engineer', 'Software Engineer (Backend)', 'Full Stack Engineer (Backend Focus)', 'Cloud Backend Engineer'], 'tags': ['backend', 'ai', 'llm', 'database', 'agile', 'code', 'integration', 'performance'], 'version': 'v1', 'source': 'job_description_backend.pdf'}, {'text': 'Backend Developer', 'doc_type': 'job_catalog', 'job_key': 'product-engineer-backend-v1', 'title': 'Product Engineer (Backend)', 'searchable_term': 'Backend Developer', 'is_primary': False, 'aliases': ['Backend Engineer', 'Backend Developer', 'Senior Backend Engineer', 'Junior Backend Engineer', 'AI Backend Engineer', 'Software Engineer (Backend)', 'Full Stack Engineer (Backend Focus)', 'Cloud Backend Engineer'], 'tags': ['backend', 'ai', 'llm', 'database', 'agile', 'code', 'integration', 'performance'], 'version': 'v1', 'source': 'job_description_backend.pdf'}, {'text': 'AI Backend Engineer', 'doc_type': 'job_catalog', 'job_key': 'product-engineer-backend-v1', 'title': 'Product Engineer (Backend)', 'searchable_term': 'AI Backend Engineer', 'is_primary': False, 'aliases': ['Backend Engineer', 'Backend Developer', 'Senior Backend Engineer', 'Junior Backend Engineer', 'AI Backend Engineer', 'Software Engineer (Backend)', 'Full Stack Engineer (Backend Focus)', 'Cloud Backend Engineer'], 'tags': ['backend', 'ai', 'llm', 'database', 'agile', 'code', 'integration', 'performance'], 'version': 'v1', 'source': 'job_description_backend.pdf'}]
-2025-10-07 23:11:20,582 [INFO] === Starting evaluation job ===
-2025-10-07 23:11:20,583 [INFO] Job title: Backend Engineer
-2025-10-07 23:11:20,583 [INFO] CV path: storage\CV_Albert_ITB.pdf
-2025-10-07 23:11:20,583 [INFO] Report path: storage\Study_CaseSubmissionTemplate.pdf
-2025-10-07 23:11:20,603 [INFO] Qdrant collections: ['job_catalog', 'job_descriptions', 'case_and_rubrics']
-2025-10-07 23:11:20,628 [INFO] job_catalog count (any): 9
-2025-10-07 23:11:20,640 [INFO] job_catalog count (doc_type=job_catalog): 9
-2025-10-07 23:11:20,669 [INFO] job_catalog sample payloads: [{'text': 'Backend Engineer', 'doc_type': 'job_catalog', 'job_key': 'product-engineer-backend-v1', 'title': 'Product Engineer (Backend)', 'searchable_term': 'Backend Engineer', 'is_primary': False, 'aliases': ['Backend Engineer', 'Backend Developer', 'Senior Backend Engineer', 'Junior Backend Engineer', 'AI Backend Engineer', 'Software Engineer (Backend)', 'Full Stack Engineer (Backend Focus)', 'Cloud Backend Engineer'], 'tags': ['backend', 'ai', 'llm', 'database', 'agile', 'code', 'integration', 'performance'], 'version': 'v1', 'source': 'job_description_backend.pdf'}, {'text': 'Backend Developer', 'doc_type': 'job_catalog', 'job_key': 'product-engineer-backend-v1', 'title': 'Product Engineer (Backend)', 'searchable_term': 'Backend Developer', 'is_primary': False, 'aliases': ['Backend Engineer', 'Backend Developer', 'Senior Backend Engineer', 'Junior Backend Engineer', 'AI Backend Engineer', 'Software Engineer (Backend)', 'Full Stack Engineer (Backend Focus)', 'Cloud Backend Engineer'], 'tags': ['backend', 'ai', 'llm', 'database', 'agile', 'code', 'integration', 'performance'], 'version': 'v1', 'source': 'job_description_backend.pdf'}, {'text': 'AI Backend Engineer', 'doc_type': 'job_catalog', 'job_key': 'product-engineer-backend-v1', 'title': 'Product Engineer (Backend)', 'searchable_term': 'AI Backend Engineer', 'is_primary': False, 'aliases': ['Backend Engineer', 'Backend Developer', 'Senior Backend Engineer', 'Junior Backend Engineer', 'AI Backend Engineer', 'Software Engineer (Backend)', 'Full Stack Engineer (Backend Focus)', 'Cloud Backend Engineer'], 'tags': ['backend', 'ai', 'llm', 'database', 'agile', 'code', 'integration', 'performance'], 'version': 'v1', 'source': 'job_description_backend.pdf'}]
-2025-10-07 23:11:21,631 [INFO] ✓ Matched 'Backend Engineer' → product-engineer-backend-v1 (term: 'Backend Engineer', similarity: 1.000)
-2025-10-07 23:11:21,637 [INFO] Resolved job_key: product-engineer-backend-v1 (similarity=1.000, tags=['backend', 'ai', 'llm', 'database', 'agile', 'code', 'integration', 'performance'])
-2025-10-07 23:11:23,121 [INFO] CV text length: 5627 chars
-2025-10-07 23:11:23,123 [INFO] Report text length: 5496 chars
-2025-10-07 23:11:23,123 [INFO] Retrieving shared rubric (once)
-2025-10-07 23:11:24,065 [INFO] Retrieved 2 rubric blocks (shared)
-2025-10-07 23:11:24,065 [INFO] Retrieving job description references for CV
-2025-10-07 23:11:24,838 [INFO] Retrieved 7 CV references
-2025-10-07 23:11:24,838 [INFO] CV ref 1: uncontrolled scenarios: managing failure cases from 3rd party APIs and mitigating the
+2025-10-08 11:58:51,515 [INFO] === Starting evaluation job ===
+2025-10-08 11:58:51,515 [INFO] Job title: Backend Engineer
+2025-10-08 11:58:51,515 [INFO] CV path: storage\CV_Albert_ITB.pdf
+2025-10-08 11:58:51,517 [INFO] Report path: storage\Study_Case_Submission_Template_-_Backend.pdf
+2025-10-08 11:58:52,314 [INFO] ✓ Matched 'Backend Engineer' → backend-pe-v1 (term: 'Backend Engineer', similarity: 1.000)
+2025-10-08 11:58:52,314 [INFO] Resolved job_key: backend-pe-v1 (similarity=1.000, tags=['backend', 'ai', 'llm', 'database', 'agile', 'code', 'integration', 'performance'])
+2025-10-08 11:58:53,100 [INFO] CV text length: 5627 chars
+2025-10-08 11:58:53,100 [INFO] Report text length: 2171 chars
+2025-10-08 11:58:53,100 [INFO] Retrieving shared rubric content
+2025-10-08 11:58:53,797 [INFO] Retrieved 2 rubric blocks
+2025-10-08 11:58:53,797 [INFO] Rubrics ref 1: ### Scoring Rubric for Case Study Evaluation
+CV Match Evaluation (1–5 scale per parameter)
+### Technical Skills Match (Weight:
+40%)
+**Description:** Alignment with job requirements (backend,
+databases...
+2025-10-08 11:58:53,797 [INFO] Rubrics ref 2: ### Scoring Rubric for Case Study Evaluation
+CV Match Evaluation (1–5 scale per parameter)
+### Technical Skills Match (Weight:
+40%)
+**Description:** Alignment with job requirements (backend,
+databases...
+2025-10-08 11:58:53,797 [INFO] Retrieving job description references for CV
+2025-10-08 11:58:54,578 [INFO] Retrieved 7 CV references
+2025-10-08 11:58:54,578 [INFO] CV ref 1: uncontrolled scenarios: managing failure cases from 3rd party APIs and mitigating the
 randomness/nondeterminism of LLM outputs.
-• Leveraging AI tools and workflows to increase team productivity (e.g., AI-assisted code generation, automated QA, internal
-bots).
-• Writing reusable, testable, and efficient code to improve the functionality of our existing systems.
-• Strengthening our test coverage with RSpec to build robust and reliable web apps.
-• Conducting full product lifecycles, from idea generation to design, implementation, testing, deployment, and maintenance.
-• Providing input on technical feasibility, timelines, and potential product trade-offs, working with business divisions.
-• Actively engaging with users and stakeholders to understand their needs and translate them into backend and AI-driven
-improvements.
-About You
-We’re looking for candidates with a strong track record of working on backend technologies of web apps, ideally with exposure
-to AI/LLM development or a strong de
-g for candidates with a strong track record of working on backend technologies of web apps, ideally with exposure
-to AI/LLM development or a strong desire to learn.
-You should have experience with backend languages and frameworks (Node.js, Django, Rails), as well as modern backend
-tooling and technologies such as:
-• Database management (MySQL, PostgreSQL, MongoDB)
-• RESTful APIs
-• Security compliance
-• Cloud technologies (AWS, Google Cloud, Azure)
-• Server-side languages (Java, Python, Ruby, or JavaScript)
-• Understanding of frontend technologies
-• User authentication and authorization between multiple systems, servers, and environments
-• Scalable application design principles
-• Creating database schemas that represent and support business processes
-• Implementing automated testing platforms and unit tests
-• Familiarity with LLM APIs, embeddings, vector databases and prompt design best practices
-We're not big on credentials, so a Computer Science degree or graduating from a prestigious
-eddings, vector databases and prompt design best practices
-We're not big on credentials, so a Computer Science degree or graduating from a prestigious university isn't something we
-emphasize. We care about what you can do and how you do it, not how you got here.
-While you'll report to a CTO directly, Rakamin is a company where Managers of One thrive. We're quick to trust that you can do
-it, and here to support you. You can expect to be counted on and do your best work and build a career here.
-This is a remote job. You're free to work where you work best: home office, co-working space, coffee shops. To ensure time
-zone overlap with our current team and maintain well communication, we're only looking for people based in Indonesia.
-Benefits & Perks
-Our benefits support a life well-lived away from work. Ample time off and all the resources you need to support you in doing the
-best work of your career:
-1. Paid time off: Rakamin offers 17 days of vacation and personal days. You can take a da
-2025-10-07 23:11:24,838 [INFO] CV ref 2: the work in our team:
+• Leveraging AI tools and workflows to increase team productivity (e.g.,...
+2025-10-08 11:58:54,578 [INFO] CV ref 2: the work in our team:
 • Collaborating with frontend engineers and 3rd parties to build robust backend solutions that support highly configurable
 platforms and cross-platform integration.
-• Developing and maintaining server-side logic for central database, ensuring high performance throughput and response
-time.
-• Designing and fine-tuning AI prompts that align with product requirements and user contexts.
-• Building LLM chaining flows, where the output from one model is reliably passed to and enriched by another.
-• Implementing Retrieval-Augmented Generation (RAG) by embedding and retrieving context from vector databases, then
-injecting it into AI prompts to improve accuracy and relevance.
-• Handling long-running AI processes gracefully — including job orchestration, async background workers, and retry
-mechanisms.
-• Designing safeguards for uncontrolled scenarios: managing failure cases from 3rd party APIs and mitigating the
-randomness/nondeterminism of LLM outputs.
-• Leveraging AI tools
-uncontrolled scenarios: managing failure cases from 3rd party APIs and mitigating the
-randomness/nondeterminism of LLM outputs.
-• Leveraging AI tools and workflows to increase team productivity (e.g., AI-assisted code generation, automated QA, internal
-bots).
-• Writing reusable, testable, and efficient code to improve the functionality of our existing systems.
-• Strengthening our test coverage with RSpec to build robust and reliable web apps.
-• Conducting full product lifecycles, from idea generation to design, implementation, testing, deployment, and maintenance.
-• Providing input on technical feasibility, timelines, and potential product trade-offs, working with business divisions.
-• Actively engaging with users and stakeholders to understand their needs and translate them into backend and AI-driven
-improvements.
-About You
-We’re looking for candidates with a strong track record of working on backend technologies of web apps, ideally with exposure
-to AI/LLM development or a strong de
-g for candidates with a strong track record of working on backend technologies of web apps, ideally with exposure
-to AI/LLM development or a strong desire to learn.
-You should have experience with backend languages and frameworks (Node.js, Django, Rails), as well as modern backend
-tooling and technologies such as:
-• Database management (MySQL, PostgreSQL, MongoDB)
-• RESTful APIs
-• Security compliance
-• Cloud technologies (AWS, Google Cloud, Azure)
-• Server-side languages (Java, Python, Ruby, or JavaScript)
-• Understanding of frontend technologies
-• User authentication and authorization between multiple systems, servers, and environments
-• Scalable application design principles
-• Creating database schemas that represent and support business processes
-• Implementing automated testing platforms and unit tests
-• Familiarity with LLM APIs, embeddings, vector databases and prompt design best practices
-We're not big on credentials, so a Computer Science degree or graduating from a prestigious
-2025-10-07 23:11:24,839 [INFO] CV ref 3: Job Description - Product Engineer (Backend)
+• Developing ...
+2025-10-08 11:58:54,593 [INFO] CV ref 3: Job Description - Product Engineer (Backend)
 2025
 Rakamin is hiring a Product Engineer (Backend) to work on Rakamin. We're looking for dedicated engineers who write code
-they’re proud of and who are eager to keep scaling and improving complex systems, including those powered by AI.
-About the Job
-You'll be building new product features alongside a frontend engineer and product manager using our Agile methodology, as
-well as addressing issues to ensure our apps are robust and our codebase is clean. As a Product Engineer, you'll write clean,
-efficient code to enhance our product's codebase in meaningful ways.
-In addition to classic backend work, this role also touches on building AI-powered systems, where you’ll design and orchestrate
-how large language models (LLMs) integrate into Rakamin’s product ecosystem.
-Here are some real examples of the work in our team:
-• Collaborating with frontend engineers and 3rd parties to build robust backend solutions that support highly configurable
-platf
-the work in our team:
-• Collaborating with frontend engineers and 3rd parties to build robust backend solutions that support highly configurable
-platforms and cross-platform integration.
-• Developing and maintaining server-side logic for central database, ensuring high performance throughput and response
-time.
-• Designing and fine-tuning AI prompts that align with product requirements and user contexts.
-• Building LLM chaining flows, where the output from one model is reliably passed to and enriched by another.
-• Implementing Retrieval-Augmented Generation (RAG) by embedding and retrieving context from vector databases, then
-injecting it into AI prompts to improve accuracy and relevance.
-• Handling long-running AI processes gracefully — including job orchestration, async background workers, and retry
-mechanisms.
-• Designing safeguards for uncontrolled scenarios: managing failure cases from 3rd party APIs and mitigating the
-randomness/nondeterminism of LLM outputs.
-• Leveraging AI tools
-2025-10-07 23:11:24,839 [INFO] Retrieving case brief + rubric references for project
-2025-10-07 23:11:25,743 [INFO] Retrieved 7 project references
-2025-10-07 23:11:25,743 [INFO] Project ref 1: # Scoring Rubric (Consolidated)
-
-### Scoring Rubric for Case Study Evaluation
+they’re proud of and who are e...
+2025-10-08 11:58:54,600 [INFO] Retrieving case brief + rubric references for project
+2025-10-08 11:58:55,290 [INFO] Retrieved 7 project references
+2025-10-08 11:58:55,290 [INFO] Project ref 1: ### Scoring Rubric for Case Study Evaluation
 CV Match Evaluation (1–5 scale per parameter)
-
-
-
 ### Technical Skills Match (Weight:
 40%)
 **Description:** Alignment with job requirements (backend,
-databases, APIs, cloud, AI/LLM).
-**Guide:** 1 = Irrelevant skills, 2 = Few overlaps, 3 =
-Partial match, 4 = Strong match, 5 =
-Excellent match + AI/LLM exposure
-
-### Experience Level (Weight:
-25%)
-**Description:** Years of experience and project complexity.
-**Guide:** 1 = <1 yr / trivial projects, 2 = 1–2 yrs, 3 =
-2–3 yrs with mid-scale projects, 4 = 3–4
-yrs solid track record, 5 = 5+ yrs / high-
-impact projects
-
-### Relevant Achievements
-**Description:** Impact of past work (scaling, performance,
-adoption).
-**Guide:** 1 = No clear achievements, 2 = Minimal
-improvements, 3 = Some measurable
-outcomes, 4 = Significant contributions,
-5 = Major measurable impact
-
-### Cultural / Collaboration Fit
-**Description:** Communication, learning mindset,
-teamwork/leadership.
-**Guide:** 1 = Not demonstrated, 2 = Minimal, 3 =
-Average, 4 = Good, 5 = Excellent and
-well-demonstrated
-
-### Project Deliverable Evaluation (1–5 scale per parameter)
-
-
-
-### Correctness (Prompt &
-Chaining)
-**Description:** Implements prompt design, LLM chaining, RAG
-context injection.
-**Guide:** 1 = Not implemented, 2 = Minimal
-attempt, 3 = Works partially, 4 = Works
-correctly, 5 = Fully correct + thoughtful
-
-### Code Quality & Structure
-**Description:** Clean, modular, reusable, tested.
-**Guide:** 1 = Poor, 2 = Some structure, 3 = Decent
-modularity, 4 = Good structure + some
-tests, 5 = Excellent quality + strong tests
-
-### Resilience & Error Handling
-**Description:** Handles long jobs, retries, randomness, API
-failures.
-**Guide:** 1 = Missing, 2 = Minimal, 3 = Partial
-handling, 4 = Solid ha
-t quality + strong tests
-
-### Resilience & Error Handling
-**Description:** Handles long jobs, retries, randomness, API
-failures.
-**Guide:** 1 = Missing, 2 = Minimal, 3 = Partial
-handling, 4 = Solid handling, 5 = Robust,
-production-ready
-
-### Documentation & Explanation
-**Description:** README clarity, setup instructions, trade-off
-explanations.
-**Guide:** 1 = Missing, 2 = Minimal, 3 = Adequate, 4
-= Clear, 5 = Excellent + insightful
-
-### Creativity / Bonus
-**Description:** Extra features beyond requirements.
-**Guide:** 1 = None, 2 = Very basic, 3 = Useful
-extras, 4 = Strong enhancements, 5 =
-Outstanding creativity
-
-### 3. Overall Candidate Evaluation
-• CV Match Rate: Weighted Average (1–5) → Convert to 0-1 decimal (×0.2).
-• Project Score: Weighted Average (1–5)
-• Overall Summary: Service should return 3–5 sentences (strengths, gaps, recommendations).
-2025-10-07 23:11:25,743 [INFO] Project ref 2: # Scoring Rubric (Consolidated)
-
-### Scoring Rubric for Case Study Evaluation
+databases...
+2025-10-08 11:58:55,291 [INFO] Project ref 2: ### Scoring Rubric for Case Study Evaluation
 CV Match Evaluation (1–5 scale per parameter)
-
-
-
 ### Technical Skills Match (Weight:
 40%)
 **Description:** Alignment with job requirements (backend,
-databases, APIs, cloud, AI/LLM).
-**Guide:** 1 = Irrelevant skills, 2 = Few overlaps, 3 =
-Partial match, 4 = Strong match, 5 =
-Excellent match + AI/LLM exposure
-
-### Experience Level (Weight:
-25%)
-**Description:** Years of experience and project complexity.
-**Guide:** 1 = <1 yr / trivial projects, 2 = 1–2 yrs, 3 =
-2–3 yrs with mid-scale projects, 4 = 3–4
-yrs solid track record, 5 = 5+ yrs / high-
-impact projects
-
-### Relevant Achievements
-**Description:** Impact of past work (scaling, performance,
-adoption).
-**Guide:** 1 = No clear achievements, 2 = Minimal
-improvements, 3 = Some measurable
-outcomes, 4 = Significant contributions,
-5 = Major measurable impact
-
-### Cultural / Collaboration Fit
-**Description:** Communication, learning mindset,
-teamwork/leadership.
-**Guide:** 1 = Not demonstrated, 2 = Minimal, 3 =
-Average, 4 = Good, 5 = Excellent and
-well-demonstrated
-
-### Project Deliverable Evaluation (1–5 scale per parameter)
-
-
-
-### Correctness (Prompt &
-Chaining)
-**Description:** Implements prompt design, LLM chaining, RAG
-context injection.
-**Guide:** 1 = Not implemented, 2 = Minimal
-attempt, 3 = Works partially, 4 = Works
-correctly, 5 = Fully correct + thoughtful
-
-### Code Quality & Structure
-**Description:** Clean, modular, reusable, tested.
-**Guide:** 1 = Poor, 2 = Some structure, 3 = Decent
-modularity, 4 = Good structure + some
-tests, 5 = Excellent quality + strong tests
-
-### Resilience & Error Handling
-**Description:** Handles long jobs, retries, randomness, API
-failures.
-**Guide:** 1 = Missing, 2 = Minimal, 3 = Partial
-handling, 4 = Solid ha
-t quality + strong tests
-
-### Resilience & Error Handling
-**Description:** Handles long jobs, retries, randomness, API
-failures.
-**Guide:** 1 = Missing, 2 = Minimal, 3 = Partial
-handling, 4 = Solid handling, 5 = Robust,
-production-ready
-
-### Documentation & Explanation
-**Description:** README clarity, setup instructions, trade-off
-explanations.
-**Guide:** 1 = Missing, 2 = Minimal, 3 = Adequate, 4
-= Clear, 5 = Excellent + insightful
-
-### Creativity / Bonus
-**Description:** Extra features beyond requirements.
-**Guide:** 1 = None, 2 = Very basic, 3 = Useful
-extras, 4 = Strong enhancements, 5 =
-Outstanding creativity
-
-### 3. Overall Candidate Evaluation
-• CV Match Rate: Weighted Average (1–5) → Convert to 0-1 decimal (×0.2).
-• Project Score: Weighted Average (1–5)
-• Overall Summary: Service should return 3–5 sentences (strengths, gaps, recommendations).
-2025-10-07 23:11:25,743 [INFO] Project ref 3: ackend service with at least the following RESTful API endpoints:
+databases...
+2025-10-08 11:58:55,291 [INFO] Project ref 3: ackend service with at least the following RESTful API endpoints:
 • POST /upload
 ◦ Accepts multipart/form-data containing the Candidate CV and Project Report (PDF).
-◦ Stores these files, return each with it’s own ID for later processing.
-• POST /evaluate
-◦ Triggers the asynchronous AI evaluation pipeline. Receives input job title (string), and both document ID.
-◦ Immediately returns a job ID to track the evaluation process.
-{
-"id": "456",
-"status": "queued"
-}
-• GET /result/{id}
-◦ Retrieves the status and result of an evaluation job. This endpoint should reflect the asynchronous, multi-stage nature
-of the process.
-◦ Possible responses:
-▪ While queued or processing
-{
-"id": "456",
-"status": "queued" | "processing"
-}
-▪ Once completed
-{
-"id": "456",
-"status": "completed",
-"result": [redacted-example]
-}
-2. Evaluation Pipeline
-Design and implement an AI-driven pipeline which will be triggered by [POST] /evaluate endpoint. Should consist these key
-Components:
-• RAG (Context Retrieval)
-◦ Ingest all System-Internal Documents (Job Description, Case Study Brief, Both Scoring Rubrics) into a vector
-database.
-◦ Retrieve relevant sections and inject into prompts (e.g., “for CV scoring” vs “for project scoring”).
-• Prompt Design & LLM Chaining
-The pipeline should consists of
-◦ CV Evaluation
-▪ Parse the candidate’s CV into structured data.
-▪ Retrieve relevant information from both Job Description and CV Scoring Rubrics.
-▪ Use an LLM to get these result: cv_match_rate & cv_feedback
-◦ Project Report Evaluation
-▪ Parse the candidate's Project Report in
-V Scoring Rubrics.
-▪ Use an LLM to get these result: cv_match_rate & cv_feedback
-◦ Project Report Evaluation
-▪ Parse the candidate's Project Report into structured data.
-▪ Retrieve relevant information from both Case Study Brief and CV Scoring Rubrics.
-▪ Use an LLM to get these result: project_score & project_feedback
-◦ Final Analysis
-▪ Use a final LLM call to synthesize the outputs from previous steps into a concise overall_summary.
-• Long-Running Process Handling
-◦ POST /evaluate should not block until LLM Chaining finishes.
-◦ Store task, return job ID, allow GET /result/{id} to check later periodically.
-• Error Handling & Randomness Control
-◦ Simulate any edge cases you can think of and how well your service can handle them.
-◦ Simulate failures from LLM API (timeouts, rate limit).
-◦ Implement retries/back-off.
-◦ Control LLM temperature or add validation layer to keep responses stable.
-3. Standardized Evaluation Parameters
-Define at least these scoring parameters:
-CV Evaluation (Matc
-2025-10-07 23:11:25,743 [INFO] Calling LLM for CV evaluation
-2025-10-07 23:11:33,049 [INFO] CV evaluation result:
+◦ Stores these files, return each w...
+2025-10-08 11:58:55,291 [INFO] Calling LLM for CV evaluation
+2025-10-08 11:58:58,111 [INFO] CV evaluation result: match_rate=0.6 feedback_preview=['Experience as a Backend Engineer aligns with the need for backend technologies in web apps.', 'Proficient in REST APIs and cloud technologies like AWS, matching job requirements.', 'Demonstrated ability to write clean, efficient code and develop robust backend solutions.', "Experience with database management and server-side languages supports the role's technical needs."]
+2025-10-08 11:58:58,111 [INFO] Calling LLM for Project evaluation
+2025-10-08 11:58:59,720 [INFO] Project evaluation result: score=4.5 feedback_preview=['Meets prompt chaining requirements.', 'Lacks error handling robustness.']
+2025-10-08 11:58:59,720 [INFO] Calling LLM for overall summary synthesis
+2025-10-08 11:59:03,053 [INFO] Overall summary preview: The candidate has a CV match rate of 0.6, indicating a moderate alignment with the job requirements. Their project score is 4.5, reflecting strong performance in meeting prompt chaining requirements, although there is a noted gap in error handling robustness. Key strengths include experience as a Backend Engineer, proficiency in REST APIs, and familiarity with cloud technologies like AWS. However, the candidate should focus on improving error handling in their projects. Overall, I recommend considering this candidate for the role, with the suggestion to address the identified gaps.
+2025-10-08 11:59:03,056 [INFO] Final combined result:
 {
   "cv_match_rate": 0.6,
-  "cv_feedback": [
-    "Experience as a Backend Engineer aligns with the need for backend technologies in the job description.",
-    "Demonstrated skills in developing REST APIs and backend features, matching the job's requirements.",
-    "Familiarity with cloud technologies like AWS and database management supports the role's expectations.",
-    "Participation in team projects showcases collaboration with frontend engineers, relevant to the job's collaborative nature."
-  ]
-}
-2025-10-07 23:11:33,049 [INFO] Calling LLM for Project evaluation
-2025-10-07 23:11:36,096 [INFO] Project evaluation result:
-{
+  "cv_feedback": "['Experience as a Backend Engineer aligns with the need for backend technologies in web apps.', 'Proficient in REST APIs and cloud technologies like AWS, matching job requirements.', 'Demonstrated ability to write clean, efficient code and develop robust backend solutions.', \"Experience with database management and server-side languages supports the role's technical needs.\"]",
   "project_score": 4.5,
-  "project_feedback": [
-    "Meets prompt chaining requirements.",
-    "Demonstrates a solid understanding of API design and asynchronous processing.",
-    "Evaluation pipeline generates structured scores and feedback.",
-    "Could improve on error handling robustness."
-  ]
+  "project_feedback": "['Meets prompt chaining requirements.', 'Lacks error handling robustness.']",
+  "overall_summary": "The candidate has a CV match rate of 0.6, indicating a moderate alignment with the job requirements. Their project score is 4.5, reflecting strong performance in meeting prompt chaining requirements, although there is a noted gap in error handling robustness. Key strengths include experience as a Backend Engineer, proficiency in REST APIs, and familiarity with cloud technologies like AWS. However, the candidate should focus on improving error handling in their projects. Overall, I recommend considering this candidate for the role, with the suggestion to address the identified gaps.",
+  "job_key": "backend-pe-v1"
 }
-2025-10-07 23:11:36,105 [INFO] Calling LLM for overall summary synthesis
-2025-10-07 23:11:39,605 [INFO] Final summary:
-{
-  "overall_summary": "The candidate's CV shows a 60% match rate, highlighting relevant backend engineering experience and skills in developing REST APIs, which align well with the job requirements. Their familiarity with cloud technologies and collaborative project experience further supports their fit for the role. The project evaluation scored 4.5, indicating strong performance in prompt chaining and API design, although there is room for improvement in error handling."
-}
-2025-10-07 23:11:39,606 [INFO] Final combined result:
-{
-  "cv_match_rate": 0.6,
-  "cv_feedback": "['Experience as a Backend Engineer aligns with the need for backend technologies in the job description.', \"Demonstrated skills in developing REST APIs and backend features, matching the job's requirements.\", \"Familiarity with cloud technologies like AWS and database management supports the role's expectations.\", \"Participation in team projects showcases collaboration with frontend engineers, relevant to the job's collaborative nature.\"]",
-  "project_score": 4.5,
-  "project_feedback": "['Meets prompt chaining requirements.', 'Demonstrates a solid understanding of API design and asynchronous processing.', 'Evaluation pipeline generates structured scores and feedback.', 'Could improve on error handling robustness.']",
-  "overall_summary": "The candidate's CV shows a 60% match rate, highlighting relevant backend engineering experience and skills in developing REST APIs, which align well with the job requirements. Their familiarity with cloud technologies and collaborative project experience further supports their fit for the role. The project evaluation scored 4.5, indicating strong performance in prompt chaining and API design, although there is room for improvement in error handling.",
-  "job_key": "product-engineer-backend-v1",
-  "resolver_confidence": 0.9999993,
-  "resolver_tags": [
-    "backend",
-    "ai",
-    "llm",
-    "database",
-    "agile",
-    "code",
-    "integration",
-    "performance"
-  ]
-}
-2025-10-07 23:11:39,606 [INFO] === Evaluation job completed ===
+2025-10-08 11:59:03,061 [INFO] === Evaluation job completed ===
 
-2025-10-07 23:40:36,640 [INFO] === Starting evaluation job ===
-2025-10-07 23:40:36,641 [INFO] Job title: Frontend Engineer
-2025-10-07 23:40:36,641 [INFO] CV path: storage\CV_Albert_ITB.pdf
-2025-10-07 23:40:36,641 [INFO] Report path: storage\Study_CaseSubmissionTemplate.pdf
-2025-10-07 23:40:36,660 [INFO] Qdrant collections: ['job_catalog', 'job_descriptions', 'case_and_rubrics']
-2025-10-07 23:40:36,741 [INFO] job_catalog count (any): 36
-2025-10-07 23:40:36,776 [INFO] job_catalog count (doc_type=job_catalog): 36
-2025-10-07 23:40:36,810 [INFO] job_catalog sample payloads: [{'text': 'Backend Engineer', 'doc_type': 'job_catalog', 'job_key': 'product-engineer-backend-v1', 'title': 'Product Engineer (Backend)', 'searchable_term': 'Backend Engineer', 'is_primary': False, 'aliases': ['Backend Engineer', 'Backend Developer', 'Senior Backend Engineer', 'Junior Backend Engineer', 'AI Backend Engineer', 'Software Engineer (Backend)', 'Full Stack Engineer (Backend Focus)', 'Cloud Backend Engineer'], 'tags': ['backend', 'ai', 'llm', 'database', 'agile', 'code', 'integration', 'performance'], 'version': 'v1', 'source': 'job_description_backend.pdf'}, {'text': 'Junior Project Manager', 'doc_type': 'job_catalog', 'job_key': 'junior-project-manager-v1', 'title': 'Junior Project Manager', 'searchable_term': 'Junior Project Manager', 'is_primary': True, 'aliases': ['Project Coordinator', 'Assistant Project Manager', 'Junior Program Manager', 'Project Management Associate', 'Entry-Level Project Manager', 'Project Support Specialist', 'Junior Project Lead', 'Project Management Trainee'], 'tags': ['project', 'management', 'stakeholders', 'communication', 'risk', 'delivery', 'coordination', 'budget'], 'version': 'v1', 'source': 'Junior_Project_Manager_JobDesc.pdf'}, {'text': 'UI Engineer', 'doc_type': 'job_catalog', 'job_key': 'frontend-engineer-v1', 'title': 'Frontend Engineer', 'searchable_term': 'UI Engineer', 'is_primary': False, 'aliases': ['Frontend Developer', 'Junior Frontend Engineer', 'Senior Frontend Engineer', 'Web Developer', 'UI Engineer', 'React Developer', 'Vue.js Developer', 'Mobile Frontend Engineer'], 'tags': ['frontend', 'web', 'mobile', 'reactjs', 'vuejs', 'html', 'css', 'javascript'], 'version': 'v1', 'source': 'Frontend_Engineer_JobDesc.pdf'}]
-2025-10-07 23:40:37,606 [INFO] ✓ Matched 'Frontend Engineer' → frontend-engineer-v1 (term: 'Frontend Engineer', similarity: 1.000)
-2025-10-07 23:40:37,608 [INFO] Resolved job_key: frontend-engineer-v1 (similarity=1.000, tags=['frontend', 'web', 'mobile', 'reactjs', 'vuejs', 'html', 'css', 'javascript'])
-2025-10-07 23:40:39,036 [INFO] CV text length: 5627 chars
-2025-10-07 23:40:39,037 [INFO] Report text length: 5496 chars
-2025-10-07 23:40:39,038 [INFO] Retrieving shared rubric (once)
-2025-10-07 23:40:40,140 [INFO] Retrieved 2 rubric blocks (shared)
-2025-10-07 23:40:40,140 [INFO] Retrieving job description references for CV
-2025-10-07 23:40:40,861 [INFO] Retrieved 5 CV references
-2025-10-07 23:40:40,861 [INFO] CV ref 1: Frontend Engineer – Job Description
+2025-10-08 11:59:06,476 [INFO] === Starting evaluation job ===
+2025-10-08 11:59:06,476 [INFO] Job title: Frontend Engineer
+2025-10-08 11:59:06,476 [INFO] CV path: storage\CV_Albert_ITB.pdf
+2025-10-08 11:59:06,476 [INFO] Report path: storage\Study_Case_Submission_Template_-_Backend.pdf
+2025-10-08 11:59:07,144 [INFO] ✓ Matched 'Frontend Engineer' → frontend-engineer-v1 (term: 'Frontend Engineer', similarity: 1.000)
+2025-10-08 11:59:07,144 [INFO] Resolved job_key: frontend-engineer-v1 (similarity=1.000, tags=['frontend', 'web', 'mobile', 'reactjs', 'vuejs', 'html', 'css', 'javascript'])
+2025-10-08 11:59:07,923 [INFO] CV text length: 5627 chars
+2025-10-08 11:59:07,923 [INFO] Report text length: 2171 chars
+2025-10-08 11:59:07,923 [INFO] Retrieving shared rubric content
+2025-10-08 11:59:08,429 [INFO] Retrieved 2 rubric blocks
+2025-10-08 11:59:08,429 [INFO] Rubrics ref 1: ## ScoringRubric
+
+## CV Match Evaluation (1–5 scale per parameter)
+
+## CV Match Evaluation Rubric (Frontend Engineer)
+
+## (1–5 scale per parameter)
+
+### Technical Skills
+Match (Weight:
+40%)
+**Descript...
+2025-10-08 11:59:08,429 [INFO] Rubrics ref 2: ## ScoringRubric
+
+## CV Match Evaluation (1–5 scale per parameter)
+
+## CV Match Evaluation Rubric (Frontend Engineer)
+
+## (1–5 scale per parameter)
+
+### Technical Skills
+Match (Weight:
+40%)
+**Descript...
+2025-10-08 11:59:08,444 [INFO] Retrieving job description references for CV
+2025-10-08 11:59:09,187 [INFO] Retrieved 5 CV references
+2025-10-08 11:59:09,187 [INFO] CV ref 1: Frontend Engineer – Job Description
 Role Overview
 The Frontend Engineer is responsible for designing, developing, testing, and maintaining
-responsive web and mobile applications. This role focuses on translating user and business
-needs into effective, accessible, and visually appealing frontend interfaces using modern
-technologies such as ReactJS and Vue.js.
-Key Responsibilities
-(cid:127) Design and structure user interfaces for web applications based on business and user
-requirements.
-(cid:127) Ensure design decisions prioritize user experience and accessibility.
-(cid:127) Develop and implement new features to enhance usability and performance.
-(cid:127) Maintain a balance between functional and aesthetic design principles.
-(cid:127) Optimize web applications for mobile and desktop responsiveness.
-(cid:127) Write reusable, maintainable, and efficient code for future scalability.
-(cid:127) Implement responsive design using HTML, CSS, and JavaScript frameworks.
-(cid:127) Ensure optimal
-and efficient code for future scalability.
-(cid:127) Implement responsive design using HTML, CSS, and JavaScript frameworks.
-(cid:127) Ensure optimal performance, speed, and scalability of web pages.
-(cid:127) Collaborate closely with design and backend teams to maintain brand consistency and
-functionality.
-Required Qualifications and Skills
-(cid:127) Bachelor’s degree in Computer Science, Information Technology, or a related field.
-(cid:127) Up to 2 years of experience in frontend development.
-(cid:127) Proficient in HTML, CSS, and JavaScript, with experience in ReactJS and Vue.js.
-(cid:127) Skilled in using modern CSS frameworks such as Bootstrap 5 and Tailwind CSS.
-(cid:127) Familiar with Figma for interpreting and implementing UI/UX designs.
-(cid:127) Understanding of Progressive Web App (PWA) optimization techniques (preferred).
-(cid:127) Experienced with Git for version control and collaborative workflows.
-(cid:127) Strong problem-solving and communication skills to work effectiv
-2025-10-07 23:40:40,862 [INFO] CV ref 2: Frontend Engineer – Job Description
+responsive web and mobile applications. This role focuses on ...
+2025-10-08 11:59:09,187 [INFO] CV ref 2: Frontend Engineer – Job Description
 Role Overview
 The Frontend Engineer is responsible for designing, developing, testing, and maintaining
-responsive web and mobile applications. This role focuses on translating user and business
-needs into effective, accessible, and visually appealing frontend interfaces using modern
-technologies such as ReactJS and Vue.js.
-Key Responsibilities
-(cid:127) Design and structure user interfaces for web applications based on business and user
-requirements.
-(cid:127) Ensure design decisions prioritize user experience and accessibility.
-(cid:127) Develop and implement new features to enhance usability and performance.
-(cid:127) Maintain a balance between functional and aesthetic design principles.
-(cid:127) Optimize web applications for mobile and desktop responsiveness.
-(cid:127) Write reusable, maintainable, and efficient code for future scalability.
-(cid:127) Implement responsive design using HTML, CSS, and JavaScript frameworks.
-(cid:127) Ensure optimal
-and efficient code for future scalability.
+responsive web and mobile applications. This role focuses on ...
+2025-10-08 11:59:09,187 [INFO] CV ref 3: and efficient code for future scalability.
 (cid:127) Implement responsive design using HTML, CSS, and JavaScript frameworks.
 (cid:127) Ensure optimal performance, speed, and scalability of web pages.
-(cid:127) Collaborate closely with design and backend teams to maintain brand consistency and
-functionality.
-Required Qualifications and Skills
-(cid:127) Bachelor’s degree in Computer Science, Information Technology, or a related field.
-(cid:127) Up to 2 years of experience in frontend development.
-(cid:127) Proficient in HTML, CSS, and JavaScript, with experience in ReactJS and Vue.js.
-(cid:127) Skilled in using modern CSS frameworks such as Bootstrap 5 and Tailwind CSS.
-(cid:127) Familiar with Figma for interpreting and implementing UI/UX designs.
-(cid:127) Understanding of Progressive Web App (PWA) optimization techniques (preferred).
-(cid:127) Experienced with Git for version control and collaborative workflows.
-(cid:127) Strong problem-solving and communication skills to work effectiv
-:127) Experienced with Git for version control and collaborative workflows.
-(cid:127) Strong problem-solving and communication skills to work effectively with cross-functional
-teams.
-Personal Attributes
-(cid:127) Detail-oriented with a focus on clean, maintainable code.
-(cid:127) Proactive learner who stays updated with the latest frontend technologies.
-(cid:127) Team player with strong collaboration and communication skills.
-(cid:127) Passionate about creating visually appealing and user-friendly interfaces.
-(cid:127) Demonstrates accountability and ownership over assigned tasks and deliverables.
-2025-10-07 23:40:40,862 [INFO] CV ref 3: and efficient code for future scalability.
-(cid:127) Implement responsive design using HTML, CSS, and JavaScript frameworks.
-(cid:127) Ensure optimal performance, speed, and scalability of web pages.
-(cid:127) Collaborate closely with design and backend teams to maintain brand consistency and
-functionality.
-Required Qualifications and Skills
-(cid:127) Bachelor’s degree in Computer Science, Information Technology, or a related field.
-(cid:127) Up to 2 years of experience in frontend development.
-(cid:127) Proficient in HTML, CSS, and JavaScript, with experience in ReactJS and Vue.js.
-(cid:127) Skilled in using modern CSS frameworks such as Bootstrap 5 and Tailwind CSS.
-(cid:127) Familiar with Figma for interpreting and implementing UI/UX designs.
-(cid:127) Understanding of Progressive Web App (PWA) optimization techniques (preferred).
-(cid:127) Experienced with Git for version control and collaborative workflows.
-(cid:127) Strong problem-solving and communication skills to work effectiv
-:127) Experienced with Git for version control and collaborative workflows.
-(cid:127) Strong problem-solving and communication skills to work effectively with cross-functional
-teams.
-Personal Attributes
-(cid:127) Detail-oriented with a focus on clean, maintainable code.
-(cid:127) Proactive learner who stays updated with the latest frontend technologies.
-(cid:127) Team player with strong collaboration and communication skills.
-(cid:127) Passionate about creating visually appealing and user-friendly interfaces.
-(cid:127) Demonstrates accountability and ownership over assigned tasks and deliverables.
-2025-10-07 23:40:40,862 [INFO] Retrieving case brief + rubric references for project
-2025-10-07 23:40:41,740 [INFO] Retrieved 7 project references
-2025-10-07 23:40:41,740 [INFO] Project ref 1: # Scoring Rubric (Consolidated)
+...
+2025-10-08 11:59:09,187 [INFO] Retrieving case brief + rubric references for project
+2025-10-08 11:59:09,844 [INFO] Retrieved 7 project references
+2025-10-08 11:59:09,844 [INFO] Project ref 1: ## ScoringRubric
 
-### Scoring Rubric for Case Study Evaluation
-CV Match Evaluation (1–5 scale per parameter)
+## CV Match Evaluation (1–5 scale per parameter)
 
+## CV Match Evaluation Rubric (Frontend Engineer)
 
+## (1–5 scale per parameter)
 
-### Technical Skills Match (Weight:
+### Technical Skills
+Match (Weight:
 40%)
-**Description:** Alignment with job requirements (backend,
-databases, APIs, cloud, AI/LLM).
-**Guide:** 1 = Irrelevant skills, 2 = Few overlaps, 3 =
-Partial match, 4 = Strong match, 5 =
-Excellent match + AI/LLM exposure
+**Descript...
+2025-10-08 11:59:09,844 [INFO] Project ref 2: ## ScoringRubric
 
-### Experience Level (Weight:
-25%)
-**Description:** Years of experience and project complexity.
-**Guide:** 1 = <1 yr / trivial projects, 2 = 1–2 yrs, 3 =
-2–3 yrs with mid-scale projects, 4 = 3–4
-yrs solid track record, 5 = 5+ yrs / high-
-impact projects
+## CV Match Evaluation (1–5 scale per parameter)
 
-### Relevant Achievements
-**Description:** Impact of past work (scaling, performance,
-adoption).
-**Guide:** 1 = No clear achievements, 2 = Minimal
-improvements, 3 = Some measurable
-outcomes, 4 = Significant contributions,
-5 = Major measurable impact
+## CV Match Evaluation Rubric (Frontend Engineer)
 
-### Cultural / Collaboration Fit
-**Description:** Communication, learning mindset,
-teamwork/leadership.
-**Guide:** 1 = Not demonstrated, 2 = Minimal, 3 =
-Average, 4 = Good, 5 = Excellent and
-well-demonstrated
+## (1–5 scale per parameter)
 
-### Project Deliverable Evaluation (1–5 scale per parameter)
-
-
-
-### Correctness (Prompt &
-Chaining)
-**Description:** Implements prompt design, LLM chaining, RAG
-context injection.
-**Guide:** 1 = Not implemented, 2 = Minimal
-attempt, 3 = Works partially, 4 = Works
-correctly, 5 = Fully correct + thoughtful
-
-### Code Quality & Structure
-**Description:** Clean, modular, reusable, tested.
-**Guide:** 1 = Poor, 2 = Some structure, 3 = Decent
-modularity, 4 = Good structure + some
-tests, 5 = Excellent quality + strong tests
-
-### Resilience & Error Handling
-**Description:** Handles long jobs, retries, randomness, API
-failures.
-**Guide:** 1 = Missing, 2 = Minimal, 3 = Partial
-handling, 4 = Solid ha
-t quality + strong tests
-
-### Resilience & Error Handling
-**Description:** Handles long jobs, retries, randomness, API
-failures.
-**Guide:** 1 = Missing, 2 = Minimal, 3 = Partial
-handling, 4 = Solid handling, 5 = Robust,
-production-ready
-
-### Documentation & Explanation
-**Description:** README clarity, setup instructions, trade-off
-explanations.
-**Guide:** 1 = Missing, 2 = Minimal, 3 = Adequate, 4
-= Clear, 5 = Excellent + insightful
-
-### Creativity / Bonus
-**Description:** Extra features beyond requirements.
-**Guide:** 1 = None, 2 = Very basic, 3 = Useful
-extras, 4 = Strong enhancements, 5 =
-Outstanding creativity
-
-### 3. Overall Candidate Evaluation
-• CV Match Rate: Weighted Average (1–5) → Convert to 0-1 decimal (×0.2).
-• Project Score: Weighted Average (1–5)
-• Overall Summary: Service should return 3–5 sentences (strengths, gaps, recommendations).
-2025-10-07 23:40:41,741 [INFO] Project ref 2: # Scoring Rubric (Consolidated)
-
-### Scoring Rubric for Case Study Evaluation
-CV Match Evaluation (1–5 scale per parameter)
-
-
-
-### Technical Skills Match (Weight:
+### Technical Skills
+Match (Weight:
 40%)
-**Description:** Alignment with job requirements (backend,
-databases, APIs, cloud, AI/LLM).
-**Guide:** 1 = Irrelevant skills, 2 = Few overlaps, 3 =
-Partial match, 4 = Strong match, 5 =
-Excellent match + AI/LLM exposure
-
-### Experience Level (Weight:
-25%)
-**Description:** Years of experience and project complexity.
-**Guide:** 1 = <1 yr / trivial projects, 2 = 1–2 yrs, 3 =
-2–3 yrs with mid-scale projects, 4 = 3–4
-yrs solid track record, 5 = 5+ yrs / high-
-impact projects
-
-### Relevant Achievements
-**Description:** Impact of past work (scaling, performance,
-adoption).
-**Guide:** 1 = No clear achievements, 2 = Minimal
-improvements, 3 = Some measurable
-outcomes, 4 = Significant contributions,
-5 = Major measurable impact
-
-### Cultural / Collaboration Fit
-**Description:** Communication, learning mindset,
-teamwork/leadership.
-**Guide:** 1 = Not demonstrated, 2 = Minimal, 3 =
-Average, 4 = Good, 5 = Excellent and
-well-demonstrated
-
-### Project Deliverable Evaluation (1–5 scale per parameter)
-
-
-
-### Correctness (Prompt &
-Chaining)
-**Description:** Implements prompt design, LLM chaining, RAG
-context injection.
-**Guide:** 1 = Not implemented, 2 = Minimal
-attempt, 3 = Works partially, 4 = Works
-correctly, 5 = Fully correct + thoughtful
-
-### Code Quality & Structure
-**Description:** Clean, modular, reusable, tested.
-**Guide:** 1 = Poor, 2 = Some structure, 3 = Decent
-modularity, 4 = Good structure + some
-tests, 5 = Excellent quality + strong tests
-
-### Resilience & Error Handling
-**Description:** Handles long jobs, retries, randomness, API
-failures.
-**Guide:** 1 = Missing, 2 = Minimal, 3 = Partial
-handling, 4 = Solid ha
-t quality + strong tests
-
-### Resilience & Error Handling
-**Description:** Handles long jobs, retries, randomness, API
-failures.
-**Guide:** 1 = Missing, 2 = Minimal, 3 = Partial
-handling, 4 = Solid handling, 5 = Robust,
-production-ready
-
-### Documentation & Explanation
-**Description:** README clarity, setup instructions, trade-off
-explanations.
-**Guide:** 1 = Missing, 2 = Minimal, 3 = Adequate, 4
-= Clear, 5 = Excellent + insightful
-
-### Creativity / Bonus
-**Description:** Extra features beyond requirements.
-**Guide:** 1 = None, 2 = Very basic, 3 = Useful
-extras, 4 = Strong enhancements, 5 =
-Outstanding creativity
-
-### 3. Overall Candidate Evaluation
-• CV Match Rate: Weighted Average (1–5) → Convert to 0-1 decimal (×0.2).
-• Project Score: Weighted Average (1–5)
-• Overall Summary: Service should return 3–5 sentences (strengths, gaps, recommendations).
-2025-10-07 23:40:41,745 [INFO] Project ref 3: Case Study Brief
+**Descript...
+2025-10-08 11:59:09,844 [INFO] Project ref 3: Case Study Brief
 Hello! Thank you for applying with us as a backend developer. This mini project should be completed within 5 days after you
-have received this document. Please spare your time to complete this project with the best results. We are really pleased to
-answer your questions if there are unclear things.
-Objective
-Your mission is to build a backend service that automates the initial screening of a job application. The service will receive a
-candidate's CV and a project report, evaluate them against a specific job description and a case study brief, and produce a
-structured, AI-generated evaluation report.
-Core Logic & Data Flow
-The system operates with a clear separation of inputs and reference documents:
-Candidate-Provided Inputs (The Data to be Evaluated):
-1. Candidate CV: The candidate's resume (PDF).
-2. Project Report: The candidate's project report to our take-home case study (PDF)
-System-Internal Documents (The "Ground Truth" for Comparison):
-1. Job Description: A docu
-candidate's project report to our take-home case study (PDF)
-System-Internal Documents (The "Ground Truth" for Comparison):
-1. Job Description: A document detailing the requirements and responsibilities for the role — You can use the job description
-you’re currently applying. This document will be used as ground truth for Candidate CV.
-◦ To make sure the vector retrieval is accurate enough, you might need to ingest a few job description documents as well.
-2. Case Study Brief: This document. Used as ground truth for Project Report. (PDF)
-3. Scoring Rubric: A predefined set of parameters for evaluating CV and Report, each has it’s own documents. (PDF)
-We want to see your ability to combine backend engineering with AI workflows (prompt design, LLM chaining, retrieval,
-resilience).
-Deliverables
-1. Backend Service (API endpoints)
-Implement a backend service with at least the following RESTful API endpoints:
-• POST /upload
-◦ Accepts multipart/form-data containing the Candidate CV and Project
-2025-10-07 23:40:41,745 [INFO] Calling LLM for CV evaluation
-2025-10-07 23:40:47,321 [INFO] CV evaluation result:
+have received this document. Please spare your time to comp...
+2025-10-08 11:59:09,845 [INFO] Calling LLM for CV evaluation
+2025-10-08 11:59:12,423 [INFO] CV evaluation result: match_rate=0.8 feedback_preview=['Proficient in HTML, CSS, and JavaScript, with experience in ReactJS and Tailwind CSS, aligning with job requirements.', 'Experience as a Full Stack Developer and Backend Engineer demonstrates relevant project complexity.', 'Led a team in frontend development, showcasing strong collaboration and communication skills.']
+2025-10-08 11:59:12,423 [INFO] Calling LLM for Project evaluation
+2025-10-08 11:59:13,941 [INFO] Project evaluation result: score=1.0 feedback_preview=['No valid case brief or rubric information found to support evaluation.']
+2025-10-08 11:59:13,941 [INFO] Calling LLM for overall summary synthesis
+2025-10-08 11:59:17,330 [INFO] Overall summary preview: The candidate has a CV match rate of 0.8, indicating a strong alignment with the job requirements, particularly in HTML, CSS, JavaScript, ReactJS, and Tailwind CSS. Their experience as a Full Stack Developer and Backend Engineer adds to their qualifications, and their leadership in frontend development highlights their collaboration and communication skills. However, the project evaluation score is 1.0, which suggests a significant gap in the project evaluation due to the absence of valid case brief or rubric information. Given the strengths in their CV but the lack of project evaluation support, I recommend further assessment to clarify their project capabilities.
+2025-10-08 11:59:17,331 [INFO] Final combined result:
 {
-  "cv_match_rate": 0.6,
-  "cv_feedback": [
-    "Experience with frontend technologies like Next.js and Tailwind CSS aligns with the JD's requirement for modern CSS frameworks.",
-    "Demonstrated teamwork and collaboration skills through roles as a Full Stack Developer and Vice Director of Frontend Division.",
-    "Proficient in HTML, CSS, and JavaScript, matching the required qualifications in the JD.",
-    "Experience in developing user-friendly interfaces supports the JD's focus on creating visually appealing applications."
-  ]
+  "cv_match_rate": 0.8,
+  "cv_feedback": "['Proficient in HTML, CSS, and JavaScript, with experience in ReactJS and Tailwind CSS, aligning with job requirements.', 'Experience as a Full Stack Developer and Backend Engineer demonstrates relevant project complexity.', 'Led a team in frontend development, showcasing strong collaboration and communication skills.']",
+  "project_score": 1.0,
+  "project_feedback": "['No valid case brief or rubric information found to support evaluation.']",
+  "overall_summary": "The candidate has a CV match rate of 0.8, indicating a strong alignment with the job requirements, particularly in HTML, CSS, JavaScript, ReactJS, and Tailwind CSS. Their experience as a Full Stack Developer and Backend Engineer adds to their qualifications, and their leadership in frontend development highlights their collaboration and communication skills. However, the project evaluation score is 1.0, which suggests a significant gap in the project evaluation due to the absence of valid case brief or rubric information. Given the strengths in their CV but the lack of project evaluation support, I recommend further assessment to clarify their project capabilities.",
+  "job_key": "frontend-engineer-v1"
 }
-2025-10-07 23:40:47,321 [INFO] Calling LLM for Project evaluation
-2025-10-07 23:40:51,057 [INFO] Project evaluation result:
-{
-  "project_score": 4.0,
-  "project_feedback": [
-    "The project implements a clear separation of concerns with structured API endpoints.",
-    "The evaluation pipeline is well-designed, utilizing RAG context retrieval and LLM chaining effectively.",
-    "Error handling and resilience strategies are considered, though improvements could be made.",
-    "Documentation is adequate, providing clarity on setup and functionality."
-  ]
-}
-2025-10-07 23:40:51,057 [INFO] Calling LLM for overall summary synthesis
-2025-10-07 23:40:54,710 [INFO] Final summary:
-{
-  "overall_summary": "The candidate's CV shows a 60% match rate, highlighting relevant experience with frontend technologies and strong teamwork skills, which align well with the job description. The project evaluation scores a 4.0, indicating a well-structured implementation with effective use of API endpoints and a solid evaluation pipeline. While error handling could be improved, the overall documentation is adequate, supporting the project's clarity and functionality."
-}
-2025-10-07 23:40:54,716 [INFO] Final combined result:
-{
-  "cv_match_rate": 0.6,
-  "cv_feedback": "[\"Experience with frontend technologies like Next.js and Tailwind CSS aligns with the JD's requirement for modern CSS frameworks.\", 'Demonstrated teamwork and collaboration skills through roles as a Full Stack Developer and Vice Director of Frontend Division.', 'Proficient in HTML, CSS, and JavaScript, matching the required qualifications in the JD.', \"Experience in developing user-friendly interfaces supports the JD's focus on creating visually appealing applications.\"]",
-  "project_score": 4.0,
-  "project_feedback": "['The project implements a clear separation of concerns with structured API endpoints.', 'The evaluation pipeline is well-designed, utilizing RAG context retrieval and LLM chaining effectively.', 'Error handling and resilience strategies are considered, though improvements could be made.', 'Documentation is adequate, providing clarity on setup and functionality.']",
-  "overall_summary": "The candidate's CV shows a 60% match rate, highlighting relevant experience with frontend technologies and strong teamwork skills, which align well with the job description. The project evaluation scores a 4.0, indicating a well-structured implementation with effective use of API endpoints and a solid evaluation pipeline. While error handling could be improved, the overall documentation is adequate, supporting the project's clarity and functionality.",
-  "job_key": "frontend-engineer-v1",
-  "resolver_confidence": 0.9999993,
-  "resolver_tags": [
-    "frontend",
-    "web",
-    "mobile",
-    "reactjs",
-    "vuejs",
-    "html",
-    "css",
-    "javascript"
-  ]
-}
-2025-10-07 23:40:54,717 [INFO] === Evaluation job completed ===
+2025-10-08 11:59:17,336 [INFO] === Evaluation job completed ===
 
-2025-10-07 23:41:25,638 [INFO] === Starting evaluation job ===
-2025-10-07 23:41:25,638 [INFO] Job title: Project Manager
-2025-10-07 23:41:25,638 [INFO] CV path: storage\CV_Albert_ITB.pdf
-2025-10-07 23:41:25,638 [INFO] Report path: storage\Study_CaseSubmissionTemplate.pdf
-2025-10-07 23:41:25,660 [INFO] Qdrant collections: ['job_catalog', 'job_descriptions', 'case_and_rubrics']
-2025-10-07 23:41:25,676 [INFO] job_catalog count (any): 36
-2025-10-07 23:41:25,689 [INFO] job_catalog count (doc_type=job_catalog): 36
-2025-10-07 23:41:25,711 [INFO] job_catalog sample payloads: [{'text': 'Backend Engineer', 'doc_type': 'job_catalog', 'job_key': 'product-engineer-backend-v1', 'title': 'Product Engineer (Backend)', 'searchable_term': 'Backend Engineer', 'is_primary': False, 'aliases': ['Backend Engineer', 'Backend Developer', 'Senior Backend Engineer', 'Junior Backend Engineer', 'AI Backend Engineer', 'Software Engineer (Backend)', 'Full Stack Engineer (Backend Focus)', 'Cloud Backend Engineer'], 'tags': ['backend', 'ai', 'llm', 'database', 'agile', 'code', 'integration', 'performance'], 'version': 'v1', 'source': 'job_description_backend.pdf'}, {'text': 'Junior Project Manager', 'doc_type': 'job_catalog', 'job_key': 'junior-project-manager-v1', 'title': 'Junior Project Manager', 'searchable_term': 'Junior Project Manager', 'is_primary': True, 'aliases': ['Project Coordinator', 'Assistant Project Manager', 'Junior Program Manager', 'Project Management Associate', 'Entry-Level Project Manager', 'Project Support Specialist', 'Junior Project Lead', 'Project Management Trainee'], 'tags': ['project', 'management', 'stakeholders', 'communication', 'risk', 'delivery', 'coordination', 'budget'], 'version': 'v1', 'source': 'Junior_Project_Manager_JobDesc.pdf'}, {'text': 'UI Engineer', 'doc_type': 'job_catalog', 'job_key': 'frontend-engineer-v1', 'title': 'Frontend Engineer', 'searchable_term': 'UI Engineer', 'is_primary': False, 'aliases': ['Frontend Developer', 'Junior Frontend Engineer', 'Senior Frontend Engineer', 'Web Developer', 'UI Engineer', 'React Developer', 'Vue.js Developer', 'Mobile Frontend Engineer'], 'tags': ['frontend', 'web', 'mobile', 'reactjs', 'vuejs', 'html', 'css', 'javascript'], 'version': 'v1', 'source': 'Frontend_Engineer_JobDesc.pdf'}]
-2025-10-07 23:41:26,576 [INFO] ✓ Matched 'Project Manager' → junior-project-manager-v1 (term: 'Junior Project Manager', similarity: 0.833)
-2025-10-07 23:41:26,577 [INFO] Resolved job_key: junior-project-manager-v1 (similarity=0.833, tags=['project', 'management', 'stakeholders', 'communication', 'risk', 'delivery', 'coordination', 'budget'])
-2025-10-07 23:41:27,953 [INFO] CV text length: 5627 chars
-2025-10-07 23:41:27,953 [INFO] Report text length: 5496 chars
-2025-10-07 23:41:27,953 [INFO] Retrieving shared rubric (once)
-2025-10-07 23:41:28,758 [INFO] Retrieved 2 rubric blocks (shared)
-2025-10-07 23:41:28,765 [INFO] Retrieving job description references for CV
-2025-10-07 23:41:29,419 [INFO] Retrieved 5 CV references
-2025-10-07 23:41:29,419 [INFO] CV ref 1: Junior Project Manager – Job Description
-Role Overview
-The Junior Project Manager is responsible for supporting the successful delivery of programs
-and projects within agreed scope, schedule, cost, and quality parameters. This role contributes
-to risk management, coordination of deliverables, and maintaining clear communication among
-stakeholders.
-Key Responsibilities
-(cid:127) Deliver programs and projects within schedule, scope, budget, and resource expectations.
-(cid:127) Identify key technical and project risks, and support the implementation of mitigation actions.
-(cid:127) Maintain customer focus and coordinate stakeholders to achieve successful outcomes.
-(cid:127) Conduct regular status meetings and assist with business reviews.
-(cid:127) Track and manage third-party deliverables for assigned projects.
-(cid:127) Promote and support the use of appropriate tools, processes, and methodologies within the
-project team.
-Required Qualifications and Skills
-(cid:127) Bachelor’s degree in
-the use of appropriate tools, processes, and methodologies within the
-project team.
-Required Qualifications and Skills
-(cid:127) Bachelor’s degree in Information Technology, Computer Science, or a related technical field.
-(cid:127) Excellent written and verbal communication skills in English.
-(cid:127) Strong analytical and problem-solving abilities.
-(cid:127) Demonstrated ability to take initiative and deliver results with minimal supervision.
-(cid:127) Exceptional organizational and multitasking skills.
-(cid:127) Proven leadership or coordination experience in academic or professional settings.
-(cid:127) Ability to work effectively in a fast-paced and globally distributed environment.
-(cid:127) Willingness to travel internationally for meetings or project-related activities.
-Desired Personal Attributes
-(cid:127) Self-motivated, result-oriented, and accountable.
-(cid:127) Passion for technology and continuous learning.
-(cid:127) Effective team player with high interpersonal awareness
-2025-10-07 23:41:29,419 [INFO] CV ref 2: Junior Project Manager – Job Description
-Role Overview
-The Junior Project Manager is responsible for supporting the successful delivery of programs
-and projects within agreed scope, schedule, cost, and quality parameters. This role contributes
-to risk management, coordination of deliverables, and maintaining clear communication among
-stakeholders.
-Key Responsibilities
-(cid:127) Deliver programs and projects within schedule, scope, budget, and resource expectations.
-(cid:127) Identify key technical and project risks, and support the implementation of mitigation actions.
-(cid:127) Maintain customer focus and coordinate stakeholders to achieve successful outcomes.
-(cid:127) Conduct regular status meetings and assist with business reviews.
-(cid:127) Track and manage third-party deliverables for assigned projects.
-(cid:127) Promote and support the use of appropriate tools, processes, and methodologies within the
-project team.
-Required Qualifications and Skills
-(cid:127) Bachelor’s degree in
-the use of appropriate tools, processes, and methodologies within the
-project team.
-Required Qualifications and Skills
-(cid:127) Bachelor’s degree in Information Technology, Computer Science, or a related technical field.
-(cid:127) Excellent written and verbal communication skills in English.
-(cid:127) Strong analytical and problem-solving abilities.
-(cid:127) Demonstrated ability to take initiative and deliver results with minimal supervision.
-(cid:127) Exceptional organizational and multitasking skills.
-(cid:127) Proven leadership or coordination experience in academic or professional settings.
-(cid:127) Ability to work effectively in a fast-paced and globally distributed environment.
-(cid:127) Willingness to travel internationally for meetings or project-related activities.
-Desired Personal Attributes
-(cid:127) Self-motivated, result-oriented, and accountable.
-(cid:127) Passion for technology and continuous learning.
-(cid:127) Effective team player with high interpersonal awareness
-oriented, and accountable.
-(cid:127) Passion for technology and continuous learning.
-(cid:127) Effective team player with high interpersonal awareness.
-(cid:127) Adaptable and respectful in a multicultural environment.
-(cid:127) Professional demeanor and integrity in all interactions.
-2025-10-07 23:41:29,420 [INFO] CV ref 3: the use of appropriate tools, processes, and methodologies within the
-project team.
-Required Qualifications and Skills
-(cid:127) Bachelor’s degree in Information Technology, Computer Science, or a related technical field.
-(cid:127) Excellent written and verbal communication skills in English.
-(cid:127) Strong analytical and problem-solving abilities.
-(cid:127) Demonstrated ability to take initiative and deliver results with minimal supervision.
-(cid:127) Exceptional organizational and multitasking skills.
-(cid:127) Proven leadership or coordination experience in academic or professional settings.
-(cid:127) Ability to work effectively in a fast-paced and globally distributed environment.
-(cid:127) Willingness to travel internationally for meetings or project-related activities.
-Desired Personal Attributes
-(cid:127) Self-motivated, result-oriented, and accountable.
-(cid:127) Passion for technology and continuous learning.
-(cid:127) Effective team player with high interpersonal awareness
-oriented, and accountable.
-(cid:127) Passion for technology and continuous learning.
-(cid:127) Effective team player with high interpersonal awareness.
-(cid:127) Adaptable and respectful in a multicultural environment.
-(cid:127) Professional demeanor and integrity in all interactions.
-2025-10-07 23:41:29,420 [INFO] Retrieving case brief + rubric references for project
-2025-10-07 23:41:30,181 [INFO] Retrieved 7 project references
-2025-10-07 23:41:30,181 [INFO] Project ref 1: # Scoring Rubric (Consolidated)
+2025-10-08 11:59:27,936 [INFO] === Starting evaluation job ===
+2025-10-08 11:59:27,936 [INFO] Job title: Fullstack Java Engineer
+2025-10-08 11:59:27,936 [INFO] CV path: storage\CV_Albert_ITB.pdf
+2025-10-08 11:59:27,936 [INFO] Report path: storage\Study_Case_Submission_Template_-_Backend.pdf
+2025-10-08 11:59:28,654 [INFO] ✓ Matched 'Fullstack Java Engineer' → full-stack-java-engineer-v1 (term: 'Full Stack Java Engineer', similarity: 0.960)
+2025-10-08 11:59:28,654 [INFO] Resolved job_key: full-stack-java-engineer-v1 (similarity=0.960, tags=['java', 'aws', 'spring-boot', 'api', 'microservices', 'databases', 'sql', 'cloud'])
+2025-10-08 11:59:29,470 [INFO] CV text length: 5627 chars
+2025-10-08 11:59:29,470 [INFO] Report text length: 2171 chars
+2025-10-08 11:59:29,470 [INFO] Retrieving shared rubric content
+2025-10-08 11:59:30,177 [INFO] Retrieved 2 rubric blocks
+2025-10-08 11:59:30,177 [INFO] Rubrics ref 1: ## ScoringRubric
 
-### Scoring Rubric for Case Study Evaluation
-CV Match Evaluation (1–5 scale per parameter)
+## CV Match Evaluation (1–5 scale per parameter)
 
+## CV Match Evaluation Rubric (Full Stack Java Engineer)
 
+## (1–5 scale per parameter)
 
-### Technical Skills Match (Weight:
+### Technical Skills
+Match (Weight:
 40%)
-**Description:** Alignment with job requirements (backend,
-databases, APIs, cloud, AI/LLM).
-**Guide:** 1 = Irrelevant skills, 2 = Few overlaps, 3 =
-Partial match, 4 = Strong match, 5 =
-Excellent match + AI/LLM exposure
+**D...
+2025-10-08 11:59:30,183 [INFO] Rubrics ref 2: ## ScoringRubric
 
-### Experience Level (Weight:
-25%)
-**Description:** Years of experience and project complexity.
-**Guide:** 1 = <1 yr / trivial projects, 2 = 1–2 yrs, 3 =
-2–3 yrs with mid-scale projects, 4 = 3–4
-yrs solid track record, 5 = 5+ yrs / high-
-impact projects
+## CV Match Evaluation (1–5 scale per parameter)
 
-### Relevant Achievements
-**Description:** Impact of past work (scaling, performance,
-adoption).
-**Guide:** 1 = No clear achievements, 2 = Minimal
-improvements, 3 = Some measurable
-outcomes, 4 = Significant contributions,
-5 = Major measurable impact
+## CV Match Evaluation Rubric (Full Stack Java Engineer)
 
-### Cultural / Collaboration Fit
-**Description:** Communication, learning mindset,
-teamwork/leadership.
-**Guide:** 1 = Not demonstrated, 2 = Minimal, 3 =
-Average, 4 = Good, 5 = Excellent and
-well-demonstrated
+## (1–5 scale per parameter)
 
-### Project Deliverable Evaluation (1–5 scale per parameter)
-
-
-
-### Correctness (Prompt &
-Chaining)
-**Description:** Implements prompt design, LLM chaining, RAG
-context injection.
-**Guide:** 1 = Not implemented, 2 = Minimal
-attempt, 3 = Works partially, 4 = Works
-correctly, 5 = Fully correct + thoughtful
-
-### Code Quality & Structure
-**Description:** Clean, modular, reusable, tested.
-**Guide:** 1 = Poor, 2 = Some structure, 3 = Decent
-modularity, 4 = Good structure + some
-tests, 5 = Excellent quality + strong tests
-
-### Resilience & Error Handling
-**Description:** Handles long jobs, retries, randomness, API
-failures.
-**Guide:** 1 = Missing, 2 = Minimal, 3 = Partial
-handling, 4 = Solid ha
-t quality + strong tests
-
-### Resilience & Error Handling
-**Description:** Handles long jobs, retries, randomness, API
-failures.
-**Guide:** 1 = Missing, 2 = Minimal, 3 = Partial
-handling, 4 = Solid handling, 5 = Robust,
-production-ready
-
-### Documentation & Explanation
-**Description:** README clarity, setup instructions, trade-off
-explanations.
-**Guide:** 1 = Missing, 2 = Minimal, 3 = Adequate, 4
-= Clear, 5 = Excellent + insightful
-
-### Creativity / Bonus
-**Description:** Extra features beyond requirements.
-**Guide:** 1 = None, 2 = Very basic, 3 = Useful
-extras, 4 = Strong enhancements, 5 =
-Outstanding creativity
-
-### 3. Overall Candidate Evaluation
-• CV Match Rate: Weighted Average (1–5) → Convert to 0-1 decimal (×0.2).
-• Project Score: Weighted Average (1–5)
-• Overall Summary: Service should return 3–5 sentences (strengths, gaps, recommendations).
-2025-10-07 23:41:30,181 [INFO] Project ref 2: # Scoring Rubric (Consolidated)
-
-### Scoring Rubric for Case Study Evaluation
-CV Match Evaluation (1–5 scale per parameter)
-
-
-
-### Technical Skills Match (Weight:
+### Technical Skills
+Match (Weight:
 40%)
-**Description:** Alignment with job requirements (backend,
-databases, APIs, cloud, AI/LLM).
-**Guide:** 1 = Irrelevant skills, 2 = Few overlaps, 3 =
-Partial match, 4 = Strong match, 5 =
-Excellent match + AI/LLM exposure
+**D...
+2025-10-08 11:59:30,183 [INFO] Retrieving job description references for CV
+2025-10-08 11:59:30,691 [INFO] Retrieved 5 CV references
+2025-10-08 11:59:30,691 [INFO] CV ref 1: Full Stack Java Engineer – Job Description
+Role Overview
+The Full Stack Java Engineer is responsible for designing, developing, and maintaining
+scalable, high-performance applications using Java and A...
+2025-10-08 11:59:30,691 [INFO] CV ref 2: Full Stack Java Engineer – Job Description
+Role Overview
+The Full Stack Java Engineer is responsible for designing, developing, and maintaining
+scalable, high-performance applications using Java and A...
+2025-10-08 11:59:30,698 [INFO] CV ref 3: te with cross-functional teams, including product managers and designers, to
+deliver high-quality solutions.
+(cid:127) Use Git for version control and contribute to best collaborative coding practices...
+2025-10-08 11:59:30,698 [INFO] Retrieving case brief + rubric references for project
+2025-10-08 11:59:31,412 [INFO] Retrieved 7 project references
+2025-10-08 11:59:31,412 [INFO] Project ref 1: ## ScoringRubric
 
-### Experience Level (Weight:
-25%)
-**Description:** Years of experience and project complexity.
-**Guide:** 1 = <1 yr / trivial projects, 2 = 1–2 yrs, 3 =
-2–3 yrs with mid-scale projects, 4 = 3–4
-yrs solid track record, 5 = 5+ yrs / high-
-impact projects
+## CV Match Evaluation (1–5 scale per parameter)
 
-### Relevant Achievements
-**Description:** Impact of past work (scaling, performance,
-adoption).
-**Guide:** 1 = No clear achievements, 2 = Minimal
-improvements, 3 = Some measurable
-outcomes, 4 = Significant contributions,
-5 = Major measurable impact
+## CV Match Evaluation Rubric (Full Stack Java Engineer)
 
-### Cultural / Collaboration Fit
-**Description:** Communication, learning mindset,
-teamwork/leadership.
-**Guide:** 1 = Not demonstrated, 2 = Minimal, 3 =
-Average, 4 = Good, 5 = Excellent and
-well-demonstrated
+## (1–5 scale per parameter)
 
-### Project Deliverable Evaluation (1–5 scale per parameter)
+### Technical Skills
+Match (Weight:
+40%)
+**D...
+2025-10-08 11:59:31,412 [INFO] Project ref 2: ## ScoringRubric
 
+## CV Match Evaluation (1–5 scale per parameter)
 
+## CV Match Evaluation Rubric (Full Stack Java Engineer)
 
-### Correctness (Prompt &
-Chaining)
-**Description:** Implements prompt design, LLM chaining, RAG
-context injection.
-**Guide:** 1 = Not implemented, 2 = Minimal
-attempt, 3 = Works partially, 4 = Works
-correctly, 5 = Fully correct + thoughtful
+## (1–5 scale per parameter)
 
-### Code Quality & Structure
-**Description:** Clean, modular, reusable, tested.
-**Guide:** 1 = Poor, 2 = Some structure, 3 = Decent
-modularity, 4 = Good structure + some
-tests, 5 = Excellent quality + strong tests
-
-### Resilience & Error Handling
-**Description:** Handles long jobs, retries, randomness, API
-failures.
-**Guide:** 1 = Missing, 2 = Minimal, 3 = Partial
-handling, 4 = Solid ha
-t quality + strong tests
-
-### Resilience & Error Handling
-**Description:** Handles long jobs, retries, randomness, API
-failures.
-**Guide:** 1 = Missing, 2 = Minimal, 3 = Partial
-handling, 4 = Solid handling, 5 = Robust,
-production-ready
-
-### Documentation & Explanation
-**Description:** README clarity, setup instructions, trade-off
-explanations.
-**Guide:** 1 = Missing, 2 = Minimal, 3 = Adequate, 4
-= Clear, 5 = Excellent + insightful
-
-### Creativity / Bonus
-**Description:** Extra features beyond requirements.
-**Guide:** 1 = None, 2 = Very basic, 3 = Useful
-extras, 4 = Strong enhancements, 5 =
-Outstanding creativity
-
-### 3. Overall Candidate Evaluation
-• CV Match Rate: Weighted Average (1–5) → Convert to 0-1 decimal (×0.2).
-• Project Score: Weighted Average (1–5)
-• Overall Summary: Service should return 3–5 sentences (strengths, gaps, recommendations).
-2025-10-07 23:41:30,181 [INFO] Project ref 3: ackend service with at least the following RESTful API endpoints:
+### Technical Skills
+Match (Weight:
+40%)
+**D...
+2025-10-08 11:59:31,412 [INFO] Project ref 3: ackend service with at least the following RESTful API endpoints:
 • POST /upload
 ◦ Accepts multipart/form-data containing the Candidate CV and Project Report (PDF).
-◦ Stores these files, return each with it’s own ID for later processing.
-• POST /evaluate
-◦ Triggers the asynchronous AI evaluation pipeline. Receives input job title (string), and both document ID.
-◦ Immediately returns a job ID to track the evaluation process.
+◦ Stores these files, return each w...
+2025-10-08 11:59:31,413 [INFO] Calling LLM for CV evaluation
+2025-10-08 11:59:33,710 [INFO] CV evaluation result: match_rate=0.4 feedback_preview=['Experience in developing REST APIs and microservices, as stated in the JD.', 'Utilized Git for version control, aligning with collaborative development practices.', 'Demonstrated teamwork and communication skills through various team projects.', 'Experience with AWS and relational databases, though not explicitly with Java or Spring Boot.']
+2025-10-08 11:59:33,712 [INFO] Calling LLM for Project evaluation
+2025-10-08 11:59:35,404 [INFO] Project evaluation result: score=4.5 feedback_preview=['Project meets prompt chaining requirements.', 'Demonstrates solid implementation of backend logic.', 'Some areas for improvement in error handling.']
+2025-10-08 11:59:35,404 [INFO] Calling LLM for overall summary synthesis
+2025-10-08 11:59:38,556 [INFO] Overall summary preview: The candidate has a CV match rate of 0.4, indicating a moderate alignment with the job requirements. Their project score is 4.5, reflecting a strong performance in implementing backend logic and meeting prompt chaining requirements. Key strengths include experience in developing REST APIs, utilizing Git for version control, and demonstrating effective teamwork and communication skills. However, there are notable gaps, particularly in explicit experience with Java and Spring Boot, as well as areas for improvement in error handling within their project. Overall, I recommend considering the candidate for further evaluation, particularly for roles that may not heavily emphasize Java or Spring Boot.
+2025-10-08 11:59:38,558 [INFO] Final combined result:
 {
-"id": "456",
-"status": "queued"
-}
-• GET /result/{id}
-◦ Retrieves the status and result of an evaluation job. This endpoint should reflect the asynchronous, multi-stage nature
-of the process.
-◦ Possible responses:
-▪ While queued or processing
-{
-"id": "456",
-"status": "queued" | "processing"
-}
-▪ Once completed
-{
-"id": "456",
-"status": "completed",
-"result": [redacted-example]
-}
-2. Evaluation Pipeline
-Design and implement an AI-driven pipeline which will be triggered by [POST] /evaluate endpoint. Should consist these key
-Components:
-• RAG (Context Retrieval)
-◦ Ingest all System-Internal Documents (Job Description, Case Study Brief, Both Scoring Rubrics) into a vector
-database.
-◦ Retrieve relevant sections and inject into prompts (e.g., “for CV scoring” vs “for project scoring”).
-• Prompt Design & LLM Chaining
-The pipeline should consists of
-◦ CV Evaluation
-▪ Parse the candidate’s CV into structured data.
-▪ Retrieve relevant information from both Job Description and CV Scoring Rubrics.
-▪ Use an LLM to get these result: cv_match_rate & cv_feedback
-◦ Project Report Evaluation
-▪ Parse the candidate's Project Report in
-V Scoring Rubrics.
-▪ Use an LLM to get these result: cv_match_rate & cv_feedback
-◦ Project Report Evaluation
-▪ Parse the candidate's Project Report into structured data.
-▪ Retrieve relevant information from both Case Study Brief and CV Scoring Rubrics.
-▪ Use an LLM to get these result: project_score & project_feedback
-◦ Final Analysis
-▪ Use a final LLM call to synthesize the outputs from previous steps into a concise overall_summary.
-• Long-Running Process Handling
-◦ POST /evaluate should not block until LLM Chaining finishes.
-◦ Store task, return job ID, allow GET /result/{id} to check later periodically.
-• Error Handling & Randomness Control
-◦ Simulate any edge cases you can think of and how well your service can handle them.
-◦ Simulate failures from LLM API (timeouts, rate limit).
-◦ Implement retries/back-off.
-◦ Control LLM temperature or add validation layer to keep responses stable.
-3. Standardized Evaluation Parameters
-Define at least these scoring parameters:
-CV Evaluation (Matc
-2025-10-07 23:41:30,182 [INFO] Calling LLM for CV evaluation
-2025-10-07 23:41:33,699 [INFO] CV evaluation result:
-{
-  "cv_match_rate": 0.6,
-  "cv_feedback": [
-    "Demonstrated strong technical skills in backend development and API integration, aligning with the JD's requirement for technical expertise.",
-    "Experience as a Full Stack Developer and Backend Engineer shows relevant project complexity, supporting the experience level criteria.",
-    "Leadership experience as Vice Director of Frontend Division indicates proven coordination and teamwork skills, matching the cultural fit expectations."
-  ]
-}
-2025-10-07 23:41:33,702 [INFO] Calling LLM for Project evaluation
-2025-10-07 23:41:36,480 [INFO] Project evaluation result:
-{
+  "cv_match_rate": 0.4,
+  "cv_feedback": "['Experience in developing REST APIs and microservices, as stated in the JD.', 'Utilized Git for version control, aligning with collaborative development practices.', 'Demonstrated teamwork and communication skills through various team projects.', 'Experience with AWS and relational databases, though not explicitly with Java or Spring Boot.']",
   "project_score": 4.5,
-  "project_feedback": [
-    "Meets prompt chaining requirements.",
-    "Demonstrates a solid understanding of RAG context injection.",
-    "Code structure is modular and reusable.",
-    "Error handling could be improved for robustness."
-  ]
+  "project_feedback": "['Project meets prompt chaining requirements.', 'Demonstrates solid implementation of backend logic.', 'Some areas for improvement in error handling.']",
+  "overall_summary": "The candidate has a CV match rate of 0.4, indicating a moderate alignment with the job requirements. Their project score is 4.5, reflecting a strong performance in implementing backend logic and meeting prompt chaining requirements. Key strengths include experience in developing REST APIs, utilizing Git for version control, and demonstrating effective teamwork and communication skills. However, there are notable gaps, particularly in explicit experience with Java and Spring Boot, as well as areas for improvement in error handling within their project. Overall, I recommend considering the candidate for further evaluation, particularly for roles that may not heavily emphasize Java or Spring Boot.",
+  "job_key": "full-stack-java-engineer-v1"
 }
-2025-10-07 23:41:36,484 [INFO] Calling LLM for overall summary synthesis
-2025-10-07 23:41:38,755 [INFO] Final summary:
+2025-10-08 11:59:38,558 [INFO] === Evaluation job completed ===
+
+2025-10-08 11:59:51,996 [INFO] === Starting evaluation job ===
+2025-10-08 11:59:51,997 [INFO] Job title: Project Manager
+2025-10-08 11:59:51,997 [INFO] CV path: storage\CV_Albert_ITB.pdf
+2025-10-08 11:59:51,997 [INFO] Report path: storage\Study_Case_Submission_Template_-_Backend.pdf
+2025-10-08 11:59:52,387 [INFO] ✓ Matched 'Project Manager' → junior-project-manager-v1 (term: 'Junior Project Manager', similarity: 0.833)
+2025-10-08 11:59:52,387 [INFO] Resolved job_key: junior-project-manager-v1 (similarity=0.833, tags=['project', 'management', 'stakeholders', 'communication', 'risk', 'delivery', 'budget', 'schedule'])
+2025-10-08 11:59:53,278 [INFO] CV text length: 5627 chars
+2025-10-08 11:59:53,279 [INFO] Report text length: 2171 chars
+2025-10-08 11:59:53,279 [INFO] Retrieving shared rubric content
+2025-10-08 11:59:53,913 [INFO] Retrieved 2 rubric blocks
+2025-10-08 11:59:53,913 [INFO] Rubrics ref 1: ## ScoringRubric
+
+## CV Match Evaluation (1–5 scale per parameter)
+
+## CV Match Evaluation Rubric (Junior Project Manager)
+
+## (1–5 scale per parameter)
+
+### Technical & Project
+Management Skills
+**De...
+2025-10-08 11:59:53,913 [INFO] Rubrics ref 2: ## ScoringRubric
+
+## CV Match Evaluation (1–5 scale per parameter)
+
+## CV Match Evaluation Rubric (Junior Project Manager)
+
+## (1–5 scale per parameter)
+
+### Technical & Project
+Management Skills
+**De...
+2025-10-08 11:59:53,913 [INFO] Retrieving job description references for CV
+2025-10-08 11:59:55,011 [INFO] Retrieved 5 CV references
+2025-10-08 11:59:55,017 [INFO] CV ref 1: Junior Project Manager – Job Description
+Role Overview
+The Junior Project Manager is responsible for supporting the successful delivery of programs
+and projects within agreed scope, schedule, cost, an...
+2025-10-08 11:59:55,017 [INFO] CV ref 2: Junior Project Manager – Job Description
+Role Overview
+The Junior Project Manager is responsible for supporting the successful delivery of programs
+and projects within agreed scope, schedule, cost, an...
+2025-10-08 11:59:55,017 [INFO] CV ref 3: the use of appropriate tools, processes, and methodologies within the
+project team.
+Required Qualifications and Skills
+(cid:127) Bachelor’s degree in Information Technology, Computer Science, or a rel...
+2025-10-08 11:59:55,017 [INFO] Retrieving case brief + rubric references for project
+2025-10-08 11:59:55,664 [INFO] Retrieved 7 project references
+2025-10-08 11:59:55,664 [INFO] Project ref 1: ## ScoringRubric
+
+## CV Match Evaluation (1–5 scale per parameter)
+
+## CV Match Evaluation Rubric (Junior Project Manager)
+
+## (1–5 scale per parameter)
+
+### Technical & Project
+Management Skills
+**De...
+2025-10-08 11:59:55,665 [INFO] Project ref 2: ## ScoringRubric
+
+## CV Match Evaluation (1–5 scale per parameter)
+
+## CV Match Evaluation Rubric (Junior Project Manager)
+
+## (1–5 scale per parameter)
+
+### Technical & Project
+Management Skills
+**De...
+2025-10-08 11:59:55,665 [INFO] Project ref 3: ackend service with at least the following RESTful API endpoints:
+• POST /upload
+◦ Accepts multipart/form-data containing the Candidate CV and Project Report (PDF).
+◦ Stores these files, return each w...
+2025-10-08 11:59:55,665 [INFO] Calling LLM for CV evaluation
+2025-10-08 11:59:58,305 [INFO] CV evaluation result: match_rate=0.4 feedback_preview=['Demonstrated ability to take initiative and deliver results with minimal supervision through various internships.', 'Experience in team collaboration and development roles aligns with the need for effective communication and teamwork.', 'Proven leadership experience as Vice Director of Frontend Division, indicating strong organizational skills.']
+2025-10-08 11:59:58,313 [INFO] Calling LLM for Project evaluation
+2025-10-08 12:00:00,066 [INFO] Project evaluation result: score=4.5 feedback_preview=['Meets prompt chaining requirements.', 'Demonstrates clear project planning and organization.', 'Identifies risks and has mitigation strategies.', 'Documentation is clear and well-structured.']
+2025-10-08 12:00:00,072 [INFO] Calling LLM for overall summary synthesis
+2025-10-08 12:00:02,956 [INFO] Overall summary preview: The candidate has a CV match rate of 0.4, indicating a moderate alignment with the role's requirements. Their project score is 4.5, reflecting strong project planning and risk management skills. Key strengths include demonstrated initiative, effective communication, and proven leadership experience. However, the CV match rate suggests some gaps in specific qualifications. Overall, I recommend considering this candidate for further evaluation due to their solid project performance and relevant experience.
+2025-10-08 12:00:02,957 [INFO] Final combined result:
 {
-  "overall_summary": "The candidate's CV shows a 60% match rate, highlighting strong technical skills in backend development and relevant leadership experience, which aligns well with the job description. The project evaluation scored 4.5, indicating a solid understanding of prompt chaining and RAG context injection, along with modular code structure. However, there is room for improvement in error handling to enhance robustness."
-}
-2025-10-07 23:41:38,755 [INFO] Final combined result:
-{
-  "cv_match_rate": 0.6,
-  "cv_feedback": "[\"Demonstrated strong technical skills in backend development and API integration, aligning with the JD's requirement for technical expertise.\", 'Experience as a Full Stack Developer and Backend Engineer shows relevant project complexity, supporting the experience level criteria.', 'Leadership experience as Vice Director of Frontend Division indicates proven coordination and teamwork skills, matching the cultural fit expectations.']",
+  "cv_match_rate": 0.4,
+  "cv_feedback": "['Demonstrated ability to take initiative and deliver results with minimal supervision through various internships.', 'Experience in team collaboration and development roles aligns with the need for effective communication and teamwork.', 'Proven leadership experience as Vice Director of Frontend Division, indicating strong organizational skills.']",
   "project_score": 4.5,
-  "project_feedback": "['Meets prompt chaining requirements.', 'Demonstrates a solid understanding of RAG context injection.', 'Code structure is modular and reusable.', 'Error handling could be improved for robustness.']",
-  "overall_summary": "The candidate's CV shows a 60% match rate, highlighting strong technical skills in backend development and relevant leadership experience, which aligns well with the job description. The project evaluation scored 4.5, indicating a solid understanding of prompt chaining and RAG context injection, along with modular code structure. However, there is room for improvement in error handling to enhance robustness.",
-  "job_key": "junior-project-manager-v1",
-  "resolver_confidence": 0.83303547,
-  "resolver_tags": [
-    "project",
-    "management",
-    "stakeholders",
-    "communication",
-    "risk",
-    "delivery",
-    "coordination",
-    "budget"
-  ]
+  "project_feedback": "['Meets prompt chaining requirements.', 'Demonstrates clear project planning and organization.', 'Identifies risks and has mitigation strategies.', 'Documentation is clear and well-structured.']",
+  "overall_summary": "The candidate has a CV match rate of 0.4, indicating a moderate alignment with the role's requirements. Their project score is 4.5, reflecting strong project planning and risk management skills. Key strengths include demonstrated initiative, effective communication, and proven leadership experience. However, the CV match rate suggests some gaps in specific qualifications. Overall, I recommend considering this candidate for further evaluation due to their solid project performance and relevant experience.",
+  "job_key": "junior-project-manager-v1"
 }
-2025-10-07 23:41:38,756 [INFO] === Evaluation job completed ===
+2025-10-08 12:00:02,957 [INFO] === Evaluation job completed ===
+
+2025-10-08 12:00:22,401 [INFO] === Starting evaluation job ===
+2025-10-08 12:00:22,401 [INFO] Job title: Mandarin Translator
+2025-10-08 12:00:22,402 [INFO] CV path: storage\CV_Albert_ITB.pdf
+2025-10-08 12:00:22,402 [INFO] Report path: storage\Study_Case_Submission_Template_-_Backend.pdf
+2025-10-08 12:00:23,067 [WARNING] ✗ No confident match for 'Mandarin Translator' (best: UI Engineer @ 0.326)
+2025-10-08 12:00:23,067 [WARNING] Could not confidently resolve job_key (best similarity=0.326). Falling back to 'mandarin-translator'. Candidates=[{'job_key': 'frontend-engineer-v1', 'title': 'Frontend Engineer', 'matched_term': 'UI Engineer', 'is_primary': False, 'tags': ['frontend', 'web', 'mobile', 'reactjs', 'vuejs', 'html', 'css', 'javascript'], 'similarity': 0.32558364}, {'job_key': 'junior-project-manager-v1', 'title': 'Junior Project Manager', 'matched_term': 'Junior Project Manager', 'is_primary': True, 'tags': ['project', 'management', 'stakeholders', 'communication', 'risk', 'delivery', 'budget', 'schedule'], 'similarity': 0.3156469}, {'job_key': 'full-stack-java-engineer-v1', 'title': 'Full Stack Java Engineer', 'matched_term': 'Frontend Java Developer', 'is_primary': False, 'tags': ['java', 'aws', 'spring-boot', 'api', 'microservices', 'databases', 'sql', 'cloud'], 'similarity': 0.31434602}]
+2025-10-08 12:00:23,922 [INFO] CV text length: 5627 chars
+2025-10-08 12:00:23,922 [INFO] Report text length: 2171 chars
+2025-10-08 12:00:23,923 [INFO] Retrieving shared rubric content
+2025-10-08 12:00:24,289 [INFO] Retrieved 0 rubric blocks
+2025-10-08 12:00:24,290 [INFO] Retrieving job description references for CV
+2025-10-08 12:00:24,781 [INFO] Retrieved 0 CV references
+2025-10-08 12:00:24,781 [INFO] Retrieving case brief + rubric references for project
+2025-10-08 12:00:25,213 [INFO] Retrieved 0 project references
+2025-10-08 12:00:25,213 [INFO] Calling LLM for CV evaluation
+2025-10-08 12:00:26,510 [INFO] CV evaluation result: match_rate=0.0 feedback_preview=['No relevant references found to evaluate this CV.']
+2025-10-08 12:00:26,510 [INFO] Calling LLM for Project evaluation
+2025-10-08 12:00:27,933 [INFO] Project evaluation result: score=1.0 feedback_preview=['No valid case brief or rubric information found to support evaluation.']
+2025-10-08 12:00:27,933 [INFO] Calling LLM for overall summary synthesis
+2025-10-08 12:00:30,587 [INFO] Overall summary preview: The candidate has a CV match rate of 0.0, indicating a complete lack of relevant references for evaluation. Additionally, the project score is 1.0, reflecting insufficient information to support a valid assessment of their project work. Key strengths are not identifiable due to the absence of relevant experience, while the salient gap lies in the lack of demonstrable qualifications or project contributions. Based on these evaluations, I do not recommend this candidate for the position.
+2025-10-08 12:00:30,587 [INFO] Final combined result:
+{
+  "cv_match_rate": 0.0,
+  "cv_feedback": "['No relevant references found to evaluate this CV.']",
+  "project_score": 1.0,
+  "project_feedback": "['No valid case brief or rubric information found to support evaluation.']",
+  "overall_summary": "The candidate has a CV match rate of 0.0, indicating a complete lack of relevant references for evaluation. Additionally, the project score is 1.0, reflecting insufficient information to support a valid assessment of their project work. Key strengths are not identifiable due to the absence of relevant experience, while the salient gap lies in the lack of demonstrable qualifications or project contributions. Based on these evaluations, I do not recommend this candidate for the position.",
+  "job_key": "mandarin-translator"
+}
+2025-10-08 12:00:30,587 [INFO] === Evaluation job completed ===
 
