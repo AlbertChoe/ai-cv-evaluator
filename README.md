@@ -94,8 +94,7 @@ All environment variables are loaded via `app/settings.py`. Key options:
 | `STORAGE_DIR`           | `storage`                       | Disk location for uploaded PDFs                   |
 | `SQLITE_PATH`           | `app.sqlite3`                   | SQLite DB file path                               |
 | `QDRANT_URL`            | `http://localhost:6333`         | Qdrant endpoint                                   |
-| `QDRANT_API_KEY`        | *(empty)*                       | Optional Qdrant auth                              |
-| `OPENAI_API_KEY`        | *(required for production)*     | OpenAI key for chat + embeddings                  |
+| `OPENAI_API_KEY`        | *(required for llm call)*       | OpenAI key for chat + embeddings                  |
 | `OPENAI_MODEL`          | `gpt-4o-mini`                   | Chat model for evaluations                        |
 | `OPENAI_EMBEDDING_MODEL`| `text-embedding-3-small`        | Embedding model for RAG vectors                   |
 | `OPENROUTER_API_KEY`    | *(optional)*                    | Alternative LLM provider                          |
@@ -110,10 +109,10 @@ All environment variables are loaded via `app/settings.py`. Key options:
 Use `ingest/ingest_all.py` to ingest job assets prior to evaluation:
 
 ```bash
-python -m ingest.ingest_all \
-  --jd data/Frontend_Engineer_JobDesc.pdf \
-  --brief data/case_study_brief_backend.pdf \
-  --rubric data/Frontend_Engineer_Rubric.pdf
+python -m ingest.ingest_all --jd data/Junior_Project_Manager_JobDesc.pdf --brief data/Product_Engineer_Backend_CaseStudy.pdf --rubric data/Product_Engineer_Backend_Rubric.pdf
+python -m ingest.ingest_all --jd data/Frontend_Engineer_JobDesc.pdf --brief data/Product_Engineer_Backend_CaseStudy.pdf --rubric data/Product_Engineer_Backend_Rubric.pdf
+python -m ingest.ingest_all --jd data/Fullstack_Java_Engineer_JobDesc.pdf --brief data/Product_Engineer_Backend_CaseStudy.pdf --rubric data/Product_Engineer_Backend_Rubric.pdf
+python -m ingest.ingest_all --jd data/Product_Engineer_Backend_JobDesc.pdf --brief data/Product_Engineer_Backend_CaseStudy.pdf --rubric data/Product_Engineer_Backend_Rubric.pdf
 ```
 
 Steps executed:
