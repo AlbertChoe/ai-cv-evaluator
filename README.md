@@ -65,6 +65,15 @@ ingest/
 
 ## Getting Started
 
+Use the helper script in the project root to confirm your `OPENAI_API_KEY` is live before running evaluations:
+
+```bash
+python tes_call_openAI.py
+```
+
+The script issues a minimal test call and logs the result or error.
+
+How to run :
 ```bash
 python -m venv .venv
 source .venv/bin/activate   # Windows: .venv\Scripts\activate
@@ -80,6 +89,7 @@ uvicorn app.main:app --reload --host 127.0.0.1 --port 8008
 ```
 
 Populate Qdrant with role-specific artifacts (JD, case brief, rubric) using the ingestion script (see [Data Ingestion](#1-data-ingestion)).
+
 
 ---
 
@@ -224,7 +234,7 @@ Result payload (successful job):
 ## Logging, Monitoring, and Health Checks
 
 - **Structured evaluation logs**: `evaluation_debug.log` captures every stage (resolution, retrieval counts, score previews, summary text) for traceability.
-- **FastAPI logging**: Configured via `app/logging.py` (rotating or level adjustments can be added there).
+- **FastAPI logging**: Configured via `app/logging.py` ( level adjustments can be changed there).
 - **Vector DB health**: `/vector-db/health` confirms Qdrant availability and enumerates collections for quick diagnostics.
 
 ---
