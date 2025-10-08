@@ -378,3 +378,77 @@ Management Skills
 }
 2025-10-08 12:00:30,587 [INFO] === Evaluation job completed ===
 
+2025-10-08 16:48:34,215 [INFO] === Starting evaluation job ===
+2025-10-08 16:48:34,217 [INFO] Job title: Backend Engineer
+2025-10-08 16:48:34,222 [INFO] CV path: storage\CV_Albert_ITB.pdf
+2025-10-08 16:48:34,223 [INFO] Report path: storage\Study_Case_Submission_Template_-_Backend.pdf
+2025-10-08 16:49:32,207 [INFO] === Starting evaluation job ===
+2025-10-08 16:49:32,208 [INFO] Job title: Backend Engineer
+2025-10-08 16:49:32,208 [INFO] CV path: storage\CV_Albert_ITB.pdf
+2025-10-08 16:49:32,208 [INFO] Report path: storage\Study_Case_Submission_Template_-_Backend.pdf
+2025-10-08 16:49:34,002 [INFO] ✓ Matched 'Backend Engineer' → backend-pe-v1 (term: 'Backend Engineer', similarity: 1.000)
+2025-10-08 16:49:34,007 [INFO] Resolved job_key: backend-pe-v1 (similarity=1.000, tags=['backend', 'ai', 'llm', 'database', 'agile', 'code', 'integration', 'performance'])
+2025-10-08 16:49:34,824 [INFO] CV text length: 5627 chars
+2025-10-08 16:49:34,824 [INFO] Report text length: 2171 chars
+2025-10-08 16:49:34,824 [INFO] Retrieving shared rubric content
+2025-10-08 16:49:37,471 [INFO] Retrieved 2 rubric blocks
+2025-10-08 16:49:37,471 [INFO] Rubrics ref 1: ### Scoring Rubric for Case Study Evaluation
+CV Match Evaluation (1–5 scale per parameter)
+### Technical Skills Match (Weight:
+40%)
+**Description:** Alignment with job requirements (backend,
+databases...
+2025-10-08 16:49:37,471 [INFO] Rubrics ref 2: ### Scoring Rubric for Case Study Evaluation
+CV Match Evaluation (1–5 scale per parameter)
+### Technical Skills Match (Weight:
+40%)
+**Description:** Alignment with job requirements (backend,
+databases...
+2025-10-08 16:49:37,475 [INFO] Retrieving job description references for CV
+2025-10-08 16:49:41,007 [INFO] Retrieved 7 CV references
+2025-10-08 16:49:41,007 [INFO] CV ref 1: uncontrolled scenarios: managing failure cases from 3rd party APIs and mitigating the
+randomness/nondeterminism of LLM outputs.
+• Leveraging AI tools and workflows to increase team productivity (e.g.,...
+2025-10-08 16:49:41,007 [INFO] CV ref 2: the work in our team:
+• Collaborating with frontend engineers and 3rd parties to build robust backend solutions that support highly configurable
+platforms and cross-platform integration.
+• Developing ...
+2025-10-08 16:49:41,008 [INFO] CV ref 3: Job Description - Product Engineer (Backend)
+2025
+Rakamin is hiring a Product Engineer (Backend) to work on Rakamin. We're looking for dedicated engineers who write code
+they’re proud of and who are e...
+2025-10-08 16:49:41,008 [INFO] Retrieving case brief + rubric references for project
+2025-10-08 16:49:42,404 [INFO] Retrieved 7 project references
+2025-10-08 16:49:42,404 [INFO] Project ref 1: ### Scoring Rubric for Case Study Evaluation
+CV Match Evaluation (1–5 scale per parameter)
+### Technical Skills Match (Weight:
+40%)
+**Description:** Alignment with job requirements (backend,
+databases...
+2025-10-08 16:49:42,405 [INFO] Project ref 2: ### Scoring Rubric for Case Study Evaluation
+CV Match Evaluation (1–5 scale per parameter)
+### Technical Skills Match (Weight:
+40%)
+**Description:** Alignment with job requirements (backend,
+databases...
+2025-10-08 16:49:42,405 [INFO] Project ref 3: ackend service with at least the following RESTful API endpoints:
+• POST /upload
+◦ Accepts multipart/form-data containing the Candidate CV and Project Report (PDF).
+◦ Stores these files, return each w...
+2025-10-08 16:49:42,405 [INFO] Calling LLM for CV evaluation
+2025-10-08 16:49:45,836 [INFO] CV evaluation result: match_rate=0.6 feedback_preview=['Experience with backend technologies is evident, as the candidate has worked on backend features and APIs.', 'The candidate has utilized cloud technologies like AWS and has experience with database management, aligning with job requirements.', 'Skills in programming languages such as Python and JavaScript match the server-side languages mentioned in the JD.', "The candidate's teamwork experience in developing applications aligns with the collaborative nature of the role."]
+2025-10-08 16:49:45,836 [INFO] Calling LLM for Project evaluation
+2025-10-08 16:49:49,051 [INFO] Project evaluation result: score=4.5 feedback_preview=['Meets prompt chaining requirements, lacks error handling robustness.', 'Demonstrates a solid understanding of API design and database schema.', 'Includes thoughtful resilience strategies for API failures.', 'Documentation is clear and provides adequate setup instructions.']
+2025-10-08 16:49:49,066 [INFO] Calling LLM for overall summary synthesis
+2025-10-08 16:49:53,188 [INFO] Overall summary preview: The candidate has a CV match rate of 0.6, indicating a moderate alignment with the job requirements. Their project score is 4.5, reflecting strong capabilities in API design and thoughtful resilience strategies. Key strengths include experience with backend technologies, cloud services, and relevant programming languages, while a notable gap is the lack of robust error handling in their project. Overall, I recommend considering this candidate for the role, as they demonstrate solid technical skills and a collaborative mindset.
+2025-10-08 16:49:53,188 [INFO] Final combined result:
+{
+  "cv_match_rate": 0.6,
+  "cv_feedback": "['Experience with backend technologies is evident, as the candidate has worked on backend features and APIs.', 'The candidate has utilized cloud technologies like AWS and has experience with database management, aligning with job requirements.', 'Skills in programming languages such as Python and JavaScript match the server-side languages mentioned in the JD.', \"The candidate's teamwork experience in developing applications aligns with the collaborative nature of the role.\"]",
+  "project_score": 4.5,
+  "project_feedback": "['Meets prompt chaining requirements, lacks error handling robustness.', 'Demonstrates a solid understanding of API design and database schema.', 'Includes thoughtful resilience strategies for API failures.', 'Documentation is clear and provides adequate setup instructions.']",
+  "overall_summary": "The candidate has a CV match rate of 0.6, indicating a moderate alignment with the job requirements. Their project score is 4.5, reflecting strong capabilities in API design and thoughtful resilience strategies. Key strengths include experience with backend technologies, cloud services, and relevant programming languages, while a notable gap is the lack of robust error handling in their project. Overall, I recommend considering this candidate for the role, as they demonstrate solid technical skills and a collaborative mindset.",
+  "job_key": "backend-pe-v1"
+}
+2025-10-08 16:49:53,188 [INFO] === Evaluation job completed ===
+
